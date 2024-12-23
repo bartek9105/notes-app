@@ -1,7 +1,7 @@
-import { Typography } from "./components";
+import "./App.css";
 
 function App() {
-  return <Typography variant="text-5">Typography</Typography>;
+  return <div className="container">Container</div>;
 }
 
 export default App;
