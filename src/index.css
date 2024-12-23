@@ -1,5 +1,7 @@
 @import "./styles/variables/colors.css";
 
-h1 {
-  color: var(--green-500);
+* {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
 }

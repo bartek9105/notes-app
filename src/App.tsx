@@ -1,5 +1,7 @@
+import { Typography } from "./components";
+
 function App() {
-  return <h1>Notes app</h1>;
+  return <Typography variant="text-5">Typography</Typography>;
 }
 
 export default App;
