@@ -1,7 +1,12 @@
 import "./App.css";
+import { Button } from "./components";
 
 function App() {
-  return <div className="container">Container</div>;
+  return (
+    <Button variant="border" disabled>
+      Button
+    </Button>
+  );
 }
 
 export default App;
