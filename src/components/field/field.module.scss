@@ -1,0 +1,8 @@
+.container {
+  display: grid;
+  row-gap: 6px;
+}
+
+.errorMessage {
+  color: var(--red-500) !important;
+}

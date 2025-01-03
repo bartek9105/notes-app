@@ -20,5 +20,6 @@ type TypographyComponent =
 
 export interface TypographyProps extends PropsWithChildren {
   variant: TypographyVariants;
+  className?: string;
   as?: TypographyComponent;
 }

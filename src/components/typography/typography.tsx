@@ -5,11 +5,15 @@ import cn from "classnames";
 export const Typography = ({
   children,
   variant,
+  className,
   as = "p",
 }: TypographyProps) => {
   const TypographyComponent = as;
+
   return (
-    <TypographyComponent className={cn(styles.typography, styles[variant])}>
+    <TypographyComponent
+      className={cn(styles.typography, styles[variant], className)}
+    >
       {children}
     </TypographyComponent>
   );
