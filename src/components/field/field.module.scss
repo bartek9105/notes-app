@@ -1,8 +1,20 @@
 .container {
   display: grid;
   row-gap: 6px;
+  width: 100%;
 }
 
 .errorMessage {
   color: var(--red-500) !important;
+}
+
+.hint {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.hintText {
+  font-size: 12px;
+  color: var(--neutral-600);
 }
