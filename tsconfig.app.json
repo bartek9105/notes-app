@@ -9,7 +9,9 @@
     "baseUrl": "./src",
     "paths": {
       "@/components": ["./components"],
-      "@/icons": ["./icons"]
+      "@/icons": ["./icons"],
+      "@/providers": ["./providers"],
+      "@/api": ["./api"]
     },
 
     /* Bundler mode */

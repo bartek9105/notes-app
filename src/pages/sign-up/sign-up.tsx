@@ -1,8 +1,15 @@
+import { useSignInWithGoogle } from "@/api";
 import { AuthLayout, GoogleAuthLayout } from "../../layouts";
 import { SignUpForm } from "./components";
 import styles from "./sign-up.module.scss";
 
 export const SignUp = () => {
+  const { mutateAsync: signInWithGoogle } = useSignInWithGoogle();
+
+  const handleSignInWithGoogle = async () => {
+    await signInWithGoogle();
+  };
+
   return (
     <AuthLayout
       title="Create Your Account"
@@ -10,7 +17,7 @@ export const SignUp = () => {
     >
       <div className={styles.content}>
         <SignUpForm onSubmit={() => {}} />
-        <GoogleAuthLayout onGoogleAuth={() => {}} />
+        <GoogleAuthLayout onGoogleAuth={handleSignInWithGoogle} />
       </div>
     </AuthLayout>
   );
