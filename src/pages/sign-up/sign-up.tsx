@@ -1,10 +1,10 @@
-import { useSignInWithGoogle } from "@/api";
+import { useSignInWithGoogleMutation } from "@/api";
 import { AuthLayout, GoogleAuthLayout } from "../../layouts";
 import { SignUpForm } from "./components";
 import styles from "./sign-up.module.scss";
 
 export const SignUp = () => {
-  const { mutateAsync: signInWithGoogle } = useSignInWithGoogle();
+  const { mutateAsync: signInWithGoogle } = useSignInWithGoogleMutation();
 
   const handleSignInWithGoogle = async () => {
     await signInWithGoogle();
