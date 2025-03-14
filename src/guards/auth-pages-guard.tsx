@@ -1,4 +1,5 @@
 import { useSession } from "@/providers";
+import { ROUTES } from "@/consts";
 import { Navigate, Outlet } from "react-router-dom";
 
 export const AuthPagesGuard = () => {
@@ -9,7 +10,7 @@ export const AuthPagesGuard = () => {
   }
 
   if (session) {
-    return <Navigate to="/" replace />;
+    return <Navigate to={ROUTES.root()} replace />;
   }
   return <Outlet />;
 };

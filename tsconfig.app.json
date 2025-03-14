@@ -11,7 +11,8 @@
       "@/components": ["./components"],
       "@/icons": ["./icons"],
       "@/providers": ["./providers"],
-      "@/api": ["./api"]
+      "@/api": ["./api"],
+      "@/consts": ["./consts"]
     },
 
     /* Bundler mode */

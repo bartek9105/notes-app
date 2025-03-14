@@ -1,4 +1,5 @@
 import { useSession } from "@/providers";
+import { ROUTES } from "@/consts";
 import { Navigate, Outlet } from "react-router-dom";
 
 export const AuthGuard = () => {
@@ -9,7 +10,7 @@ export const AuthGuard = () => {
   }
 
   if (!session) {
-    return <Navigate to="/sign-up" replace />;
+    return <Navigate to={ROUTES.signUp()} replace />;
   }
   return <Outlet />;
 };
