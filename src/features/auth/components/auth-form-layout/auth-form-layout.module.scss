@@ -1,0 +1,43 @@
+@use "../../../../styles/mixins/responsive.scss" as *;
+
+.container {
+  width: 100%;
+  max-width: 343px;
+  background-color: var(--neutral-0);
+  border-radius: 12px;
+  padding: 48px 16px;
+  box-shadow: var(--shadow-lg);
+  display: grid;
+  row-gap: 16px;
+  justify-items: center;
+
+  @include tablet-up {
+    max-width: 522px;
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+
+  @include desktop-up {
+    max-width: 540px;
+    padding-left: 48px;
+    padding-right: 48px;
+  }
+}
+
+.content {
+  width: 100%;
+  padding-top: 24px;
+  display: grid;
+  row-gap: 16px;
+}
+
+.heading {
+  display: grid;
+  row-gap: 8px;
+  text-align: center;
+}
+
+.hint {
+  text-align: center;
+  color: var(--neutral-600) !important;
+}

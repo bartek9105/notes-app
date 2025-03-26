@@ -1,10 +1,10 @@
-import { SignUpForm } from "@/features";
+import { SignInForm } from "@/features";
 import { AuthLayout } from "@/layouts";
 
-export const SignUp = () => {
+export const SignIn = () => {
   return (
     <AuthLayout>
-      <SignUpForm />
+      <SignInForm />
     </AuthLayout>
   );
 };

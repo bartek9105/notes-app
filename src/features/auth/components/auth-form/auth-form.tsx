@@ -1,18 +1,23 @@
-import { SIGN_UP_FORM_DEFAULT_VALUES } from "./sign-up-form.const";
-import { signUpFormValidationSchema } from "./sign-up-form.validations";
-import styles from "./sign-up-form.module.scss";
-import { SignUpFormDataType } from "./sign-up-form.types";
 import { BaseForm, Button, Field, useBaseForm } from "@/components";
+import { AUTH_FORM_DEFAULT_VALUES } from "./auth-form.const";
+import { authFormValidationSchema } from "./auth-form.validations";
+import { AuthFormDataType } from "./auth-form.types";
+import styles from "./auth-form.module.scss";
 
-interface SignUpFormProps {
-  onSubmit: (data: SignUpFormDataType) => void;
+interface AuthFormProps {
+  onSubmit: (data: AuthFormDataType) => void;
   isPending: boolean;
+  buttonLabel: string;
 }
 
-export const SignUpForm = ({ onSubmit, isPending }: SignUpFormProps) => {
+export const AuthForm = ({
+  onSubmit,
+  isPending,
+  buttonLabel,
+}: AuthFormProps) => {
   const formParams = useBaseForm({
-    defaultValues: SIGN_UP_FORM_DEFAULT_VALUES,
-    validationSchema: signUpFormValidationSchema,
+    defaultValues: AUTH_FORM_DEFAULT_VALUES,
+    validationSchema: authFormValidationSchema,
   });
 
   return (
@@ -33,7 +38,7 @@ export const SignUpForm = ({ onSubmit, isPending }: SignUpFormProps) => {
         hint="At least 8 characters"
       />
       <Button type="submit" isLoading={isPending}>
-        Sign up
+        {buttonLabel}
       </Button>
     </BaseForm>
   );

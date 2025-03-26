@@ -12,7 +12,9 @@
       "@/icons": ["./icons"],
       "@/providers": ["./providers"],
       "@/api": ["./api"],
-      "@/consts": ["./consts"]
+      "@/consts": ["./consts"],
+      "@/features": ["./features"],
+      "@/layouts": ["./layouts"]
     },
 
     /* Bundler mode */

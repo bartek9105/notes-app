@@ -1,18 +1,14 @@
 import { Link } from "react-router-dom";
-import styles from "./auth-hint-layout.module.scss";
+import styles from "./auth-hint.module.scss";
 import { Typography } from "@/components";
 
-interface AuthHintLayoutProps {
+interface AuthHintProps {
   hint: string;
   linkTo: string;
   linkText: string;
 }
 
-export const AuthHintLayout = ({
-  hint,
-  linkTo,
-  linkText,
-}: AuthHintLayoutProps) => {
+export const AuthHint = ({ hint, linkTo, linkText }: AuthHintProps) => {
   return (
     <div className={styles.container}>
       <Typography variant="text-5" className={styles.hint}>
