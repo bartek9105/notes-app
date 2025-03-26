@@ -21,10 +21,14 @@
 
   @include tablet-up {
     max-width: 522px;
+    padding-left: 32px;
+    padding-right: 32px;
   }
 
   @include desktop-up {
     max-width: 540px;
+    padding-left: 48px;
+    padding-right: 48px;
   }
 }
 

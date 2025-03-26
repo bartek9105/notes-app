@@ -16,6 +16,10 @@
   }
 }
 
+.isLoading {
+  pointer-events: none;
+}
+
 .primary {
   color: var(--neutral-0);
   background-color: var(--blue-500);

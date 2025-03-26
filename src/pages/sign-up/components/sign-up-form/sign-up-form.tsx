@@ -6,9 +6,10 @@ import { BaseForm, Button, Field, useBaseForm } from "@/components";
 
 interface SignUpFormProps {
   onSubmit: (data: SignUpFormDataType) => void;
+  isPending: boolean;
 }
 
-export const SignUpForm = ({ onSubmit }: SignUpFormProps) => {
+export const SignUpForm = ({ onSubmit, isPending }: SignUpFormProps) => {
   const formParams = useBaseForm({
     defaultValues: SIGN_UP_FORM_DEFAULT_VALUES,
     validationSchema: signUpFormValidationSchema,
@@ -31,7 +32,9 @@ export const SignUpForm = ({ onSubmit }: SignUpFormProps) => {
         type="password"
         hint="At least 8 characters"
       />
-      <Button>Sign up</Button>
+      <Button type="submit" isLoading={isPending}>
+        Sign up
+      </Button>
     </BaseForm>
   );
 };
