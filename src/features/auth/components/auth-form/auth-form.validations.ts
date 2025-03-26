@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-export const signUpFormValidationSchema = z.object({
+export const authFormValidationSchema = z.object({
   email: z.string().email(),
   password: z
     .string()
