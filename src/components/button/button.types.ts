@@ -7,4 +7,5 @@ export interface ButtonProps
     ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: ButtonVariant;
   leftIcon?: ReactNode;
+  isLoading?: boolean;
 }
