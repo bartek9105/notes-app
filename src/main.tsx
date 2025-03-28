@@ -8,6 +8,8 @@ import { QueryProvider, SessionProvider } from "@/providers";
 import { AuthGuard, AuthPagesGuard } from "./guards";
 import { ROUTES } from "@/consts";
 import { SignIn } from "./pages/sign-in/sign-in.tsx";
+import { ForgotPassword } from "./pages/forgot-password/forgot-password.tsx";
+import { ResetPassword } from "./pages/reset-password/reset-password.tsx";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
@@ -21,6 +23,13 @@ createRoot(document.getElementById("root")!).render(
             <Route element={<AuthPagesGuard />}>
               <Route path={ROUTES.signIn()} element={<SignIn />} />
             </Route>
+            {/* <Route element={<AuthPagesGuard />}> */}
+            <Route
+              path={ROUTES.forgotPassword()}
+              element={<ForgotPassword />}
+            />
+            <Route path={ROUTES.resetPassword()} element={<ResetPassword />} />
+            {/* </Route> */}
             <Route element={<AuthGuard />}>
               <Route path={ROUTES.root()} element={<App />} />
             </Route>
