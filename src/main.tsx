@@ -10,6 +10,7 @@ import { ROUTES } from "@/consts";
 import { SignIn } from "./pages/sign-in/sign-in.tsx";
 import { ForgotPassword } from "./pages/forgot-password/forgot-password.tsx";
 import { ResetPassword } from "./pages/reset-password/reset-password.tsx";
+import { MainLayout } from "./layouts";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
@@ -30,8 +31,11 @@ createRoot(document.getElementById("root")!).render(
             />
             <Route path={ROUTES.resetPassword()} element={<ResetPassword />} />
             {/* </Route> */}
-            <Route element={<AuthGuard />}>
-              <Route path={ROUTES.root()} element={<App />} />
+            <Route path="/" element={<MainLayout />}>
+              <Route element={<AuthGuard />}>
+                <Route path={ROUTES.notes.root()} element={<App />} />
+                <Route path={ROUTES.notes.archived()} element={<App />} />
+              </Route>
             </Route>
           </Routes>
         </SessionProvider>
