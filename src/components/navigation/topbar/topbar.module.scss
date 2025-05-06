@@ -1,0 +1,12 @@
+@use "../../../styles/mixins/responsive.scss" as *;
+
+.container {
+  background-color: var(--neutral-100);
+  height: 54px;
+  padding: 16px 12px;
+
+  @include tablet-up {
+    height: 74px;
+    padding: 24px 32px;
+  }
+}

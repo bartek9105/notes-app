@@ -9,6 +9,8 @@
     "baseUrl": "./src",
     "paths": {
       "@/components": ["./components"],
+      "@/types": ["./types"],
+      "@/utils": ["./utils"],
       "@/icons": ["./icons"],
       "@/providers": ["./providers"],
       "@/api": ["./api"],

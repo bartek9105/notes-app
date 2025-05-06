@@ -10,7 +10,7 @@ export const AuthPagesGuard = () => {
   }
 
   if (session) {
-    return <Navigate to={ROUTES.root()} replace />;
+    return <Navigate to={ROUTES.notes.root()} replace />;
   }
   return <Outlet />;
 };
