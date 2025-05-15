@@ -6,10 +6,15 @@ type InputProps = InputHTMLAttributes<HTMLInputElement> & {
   isError?: boolean;
 };
 
-export const Input = ({ type = "text", isError, ...props }: InputProps) => {
+export const Input = ({
+  type = "text",
+  isError,
+  className,
+  ...props
+}: InputProps) => {
   return (
     <input
-      className={cn(styles.container, {
+      className={cn(className, styles.container, {
         [styles.error]: isError,
       })}
       type={type}

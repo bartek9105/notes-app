@@ -1,9 +1,0 @@
-.container {
-  width: 500px;
-  height: 500px;
-  box-shadow: var(--shadow-sm);
-}
-
-ul {
-  list-style-type: none;
-}
