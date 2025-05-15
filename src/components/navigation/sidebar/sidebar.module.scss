@@ -1,0 +1,62 @@
+@use "../../../styles/mixins/responsive.scss" as *;
+
+.container {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  top: 0;
+  left: 0;
+  width: 272px;
+  height: 100%;
+  border-right: 1px solid var(--neutral-200);
+  background-color: var(--neutral-0);
+  z-index: 1000;
+  padding: 24px 16px 12px;
+
+  @include desktop-up {
+    position: unset;
+    height: 100%;
+  }
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.icon {
+  font-size: 20px;
+}
+
+.link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 12px;
+  border-radius: 4px;
+  color: var(--neutral-600);
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    color: var(--blue-500);
+  }
+}
+
+.linkLeftContent {
+  display: flex;
+  column-gap: 8px;
+  align-items: center;
+}
+
+.linkActive {
+  background-color: var(--neutral-100);
+  color: var(--blue-500);
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

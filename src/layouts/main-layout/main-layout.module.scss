@@ -1,0 +1,16 @@
+@use "../../styles/mixins/responsive.scss" as *;
+
+.sidebarOpenLayout {
+  @include desktop-up {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    height: 100vh;
+  }
+}
+
+.content {
+  @include desktop-up {
+    display: flex;
+    flex-direction: column;
+  }
+}
