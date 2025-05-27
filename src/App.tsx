@@ -12,14 +12,14 @@ const App = () => {
 
   return (
     <NotesLayout
-      renderNotesList={() => (
+      NotesListComponent={
         <NotesList
           title="All notes"
           buttonText="Create New Note"
           onFetchNextPage={fetchNextPage}
           {...{ notes, isLoading, isFetchingNextPage, hasNextPage }}
         />
-      )}
+      }
     />
   );
 };
