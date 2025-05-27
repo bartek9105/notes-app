@@ -8,17 +8,26 @@ export const Button = ({
   variant = "primary",
   leftIcon,
   isLoading,
+  className,
+  iconOnly,
+  icon,
   ...rest
 }: ButtonProps) => {
   return (
     <button
-      className={cn(styles.button, styles[variant], {
-        [styles.isLoading]: isLoading,
-      })}
+      className={cn(
+        styles.button,
+        styles[variant],
+        {
+          [styles.isLoading]: isLoading,
+          [styles.iconOnly]: iconOnly,
+        },
+        className
+      )}
       {...rest}
     >
       {leftIcon ? leftIcon : null}
-      {isLoading ? <Spinner /> : children}
+      {isLoading ? <Spinner /> : children || icon}
     </button>
   );
 };

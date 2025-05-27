@@ -1,0 +1,15 @@
+.container {
+  cursor: pointer;
+  display: grid;
+  row-gap: 12px;
+  padding: 8px;
+  border-radius: 6px;
+  transition: all 0.2s ease-in-out;
+  &:hover {
+    background-color: var(--neutral-100);
+  }
+}
+
+.date {
+  color: var(--neutral-700);
+}
