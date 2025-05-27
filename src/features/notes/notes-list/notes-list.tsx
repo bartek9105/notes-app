@@ -1,4 +1,3 @@
-import { Note } from "@/types";
 import styles from "./notes-list.module.scss";
 import { NoteListItem } from "./note-list-item";
 import { Button, InfiniteScrollContainer, Typography } from "@/components";
@@ -8,17 +7,7 @@ import {
   itemVariantsAnimation,
   listVariantsAnimation,
 } from "./notes-list.const";
-
-interface NotesListProps {
-  title: string;
-  notes: Note[];
-  buttonText: string;
-  onNoteSelect?: (note: Note) => void;
-  isLoading: boolean;
-  isFetchingNextPage: boolean;
-  hasNextPage: boolean;
-  onFetchNextPage: () => void;
-}
+import { NotesListProps } from "./notes-list.types";
 
 export const NotesList = ({
   title,
