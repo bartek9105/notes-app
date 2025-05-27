@@ -14,3 +14,8 @@
     flex-direction: column;
   }
 }
+
+.outlet {
+  height: calc(100dvh - 81px);
+  overflow: hidden;
+}

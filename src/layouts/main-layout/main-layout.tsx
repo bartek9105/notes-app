@@ -24,7 +24,9 @@ export const MainLayout = () => {
           onOpenMenu={() => setSidebarOpen(!isSidebarOpen)}
           isSidebarOpen={isSidebarOpen}
         />
-        <Outlet />
+        <div className={styles.outlet}>
+          <Outlet />
+        </div>
       </div>
     </div>
   );

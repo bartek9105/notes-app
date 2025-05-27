@@ -1,6 +1,7 @@
 @import "./styles/variables/colors.css";
 @import "./styles/variables/shadows.css";
 @import "normalize.css";
+@import "./styles//mixins/responsive.scss";
 
 * {
   box-sizing: border-box;

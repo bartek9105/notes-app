@@ -6,3 +6,4 @@ export * from "./field";
 export * from "./spinner";
 export * from "./navigation";
 export * from "./input";
+export * from "./infinite-scroll-container";
