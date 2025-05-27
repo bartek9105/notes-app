@@ -28,14 +28,14 @@ export const InfiniteScrollContainer = ({
   }, [hasNextPage, inView]);
 
   if (isFetching) {
-    return <Spinner />;
+    return <Spinner asBlock />;
   }
 
   return (
-    <div>
+    <>
       {children}
-      {isFetchingNextPage && <Spinner />}
+      {isFetchingNextPage && <Spinner asBlock />}
       <div ref={ref} />
-    </div>
+    </>
   );
 };
