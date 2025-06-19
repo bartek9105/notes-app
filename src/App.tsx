@@ -1,7 +1,14 @@
-import { NotesLayout, NotesList } from "@/features";
-import { useGetAllNotesInfiniteQuery } from "@/api";
+import { NoteDetails, NotesLayout, NotesList } from "@/features";
+import { useGetAllNotesInfiniteQuery, useGetNoteQuery } from "@/api";
+import { useNavigate, useParams } from "react-router-dom";
+import { ROUTES } from "@/consts";
 
 const App = () => {
+  const { id } = useParams();
+  const navigate = useNavigate();
+
+  const isNoteSelected = !!id;
+
   const {
     data: notes,
     isLoading,
@@ -10,6 +17,10 @@ const App = () => {
     hasNextPage,
   } = useGetAllNotesInfiniteQuery();
 
+  const { data, isLoading: isLoadingNote } = useGetNoteQuery(
+    id || notes[0]?.id
+  );
+
   return (
     <NotesLayout
       NotesListComponent={
@@ -17,9 +28,19 @@ const App = () => {
           title="All notes"
           buttonText="Create New Note"
           onFetchNextPage={fetchNextPage}
+          onNoteSelect={(id) => navigate(ROUTES.notes.details(id))}
+          activeNoteId={id}
           {...{ notes, isLoading, isFetchingNextPage, hasNextPage }}
         />
       }
+      NoteDetailsComponent={
+        <NoteDetails
+          note={data}
+          isLoading={isLoadingNote}
+          onGoBack={() => navigate(ROUTES.notes.root())}
+        />
+      }
+      isNoteSelected={isNoteSelected}
     />
   );
 };

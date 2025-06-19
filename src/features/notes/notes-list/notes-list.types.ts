@@ -4,9 +4,10 @@ export interface NotesListProps {
   title: string;
   notes: Note[];
   buttonText: string;
-  onNoteSelect?: (note: Note) => void;
+  onNoteSelect?: (id: Note["id"]) => void;
   isLoading: boolean;
   isFetchingNextPage: boolean;
   hasNextPage: boolean;
   onFetchNextPage: () => void;
+  activeNoteId?: string;
 }

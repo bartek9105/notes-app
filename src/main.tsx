@@ -34,7 +34,7 @@ createRoot(document.getElementById("root")!).render(
             <Route path="/" element={<MainLayout />}>
               <Route element={<AuthGuard />}>
                 <Route path={ROUTES.notes.root()} element={<App />} />
-                <Route path={ROUTES.notes.archived()} element={<App />} />
+                <Route path={ROUTES.notes.details(":id")} element={<App />} />
               </Route>
             </Route>
           </Routes>

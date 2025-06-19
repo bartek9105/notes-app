@@ -11,6 +11,7 @@ export const Button = ({
   className,
   iconOnly,
   icon,
+  isFlat,
   ...rest
 }: ButtonProps) => {
   return (
@@ -21,6 +22,7 @@ export const Button = ({
         {
           [styles.isLoading]: isLoading,
           [styles.iconOnly]: iconOnly,
+          [styles.isFlat]: isFlat,
         },
         className
       )}

@@ -18,6 +18,7 @@ export const NotesList = ({
   isFetchingNextPage,
   hasNextPage,
   onFetchNextPage,
+  activeNoteId,
 }: NotesListProps) => {
   return (
     <>
@@ -44,13 +45,13 @@ export const NotesList = ({
           {notes.map((note) => (
             <motion.li
               key={note.id}
-              onClick={() => onNoteSelect?.(note)}
+              onClick={() => onNoteSelect?.(note.id)}
               className={styles.listItem}
               variants={itemVariantsAnimation}
               initial="hidden"
               animate="visible"
             >
-              <NoteListItem note={note} />
+              <NoteListItem note={note} isActive={activeNoteId === note.id} />
             </motion.li>
           ))}
         </motion.ul>

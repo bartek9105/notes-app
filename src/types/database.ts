@@ -13,21 +13,21 @@ export type Database = {
         Row: {
           created_at: string
           description: string | null
-          id: number
+          id: string
           tags: string[] | null
           title: string
         }
         Insert: {
           created_at?: string
           description?: string | null
-          id?: number
+          id?: string
           tags?: string[] | null
           title: string
         }
         Update: {
           created_at?: string
           description?: string | null
-          id?: number
+          id?: string
           tags?: string[] | null
           title?: string
         }
