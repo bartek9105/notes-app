@@ -5,8 +5,11 @@ import { forgotPasswordFormValidationSchema } from "./forgot-password-form.valid
 import styles from "./forgot-password-form.module.scss";
 import { useForgotPasswordMutation } from "@/api";
 import { ForgotPasswordDataType } from "./forgot-password.types";
+import { useTranslation } from "react-i18next";
 
 export const ForgotPasswordForm = () => {
+  const { t } = useTranslation();
+
   const formParams = useBaseForm({
     defaultValues: FORGOT_PASSWORD_FORM_DEFAULT_VALUES,
     validationSchema: forgotPasswordFormValidationSchema,
@@ -21,8 +24,8 @@ export const ForgotPasswordForm = () => {
 
   return (
     <AuthFormLayout
-      title="Forgotten your password?"
-      hint="Enter your email below, and we’ll send you a link to reset it."
+      title={t("auth.forgot-password.title")}
+      hint={t("auth.forgot-password.hint")}
     >
       <BaseForm
         params={formParams}
@@ -31,11 +34,11 @@ export const ForgotPasswordForm = () => {
       >
         <Field
           name="email"
-          label="Email address"
+          label={t("auth.forgot-password.form.email.label")}
           placeholder="email@example.com"
         />
         <Button type="submit" isLoading={isPending}>
-          Send Reset Link
+          {t("auth.forgot-password.form.submit")}
         </Button>
       </BaseForm>
     </AuthFormLayout>

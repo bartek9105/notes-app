@@ -3,6 +3,7 @@ import { AUTH_FORM_DEFAULT_VALUES } from "./auth-form.const";
 import { authFormValidationSchema } from "./auth-form.validations";
 import { AuthFormDataType } from "./auth-form.types";
 import styles from "./auth-form.module.scss";
+import { useTranslation } from "react-i18next";
 
 interface AuthFormProps {
   onSubmit: (data: AuthFormDataType) => void;
@@ -15,6 +16,8 @@ export const AuthForm = ({
   isPending,
   buttonLabel,
 }: AuthFormProps) => {
+  const { t } = useTranslation();
+
   const formParams = useBaseForm({
     defaultValues: AUTH_FORM_DEFAULT_VALUES,
     validationSchema: authFormValidationSchema,
@@ -28,14 +31,14 @@ export const AuthForm = ({
     >
       <Field
         name="email"
-        label="Email address"
+        label={t("auth.form.email.label")}
         placeholder="email@example.com"
       />
       <Field
         name="password"
-        label="Password"
+        label={t("auth.form.password.label")}
         type="password"
-        hint="At least 8 characters"
+        hint={t("auth.form.password.hint")}
       />
       <Button type="submit" isLoading={isPending}>
         {buttonLabel}

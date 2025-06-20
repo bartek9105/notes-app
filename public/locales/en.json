@@ -1,0 +1,59 @@
+{
+  "topbar": {
+    "title": "All notes",
+    "search": {
+      "placeholder": "Search by title, content, or tags"
+    }
+  },
+  "notes": {
+    "title": "All notes",
+    "create-new-button": "Create New Note",
+    "tags": "Tags",
+    "last-edited": "Last edited",
+    "go-back": "Go back",
+    "cancel": "Cancel",
+    "save-note": "Save Note"
+  },
+  "auth": {
+    "form": {
+      "email": {
+        "label": "Email address"
+      },
+      "password": {
+        "label": "Password",
+        "hint": "At least 8 characters"
+      }
+    },
+    "forgot-password": {
+      "title": "Forgotten your password?",
+      "hint": "Enter your email below, and we’ll send you a link to reset it.",
+      "form": {
+        "email": {
+          "label": "Email address"
+        },
+        "submit": "Send Reset Link"
+      }
+    },
+    "sign-in": {
+      "title": "Welcome to Note",
+      "hint": "Please log in to continue",
+      "form": {
+        "submit": "Login",
+        "hint": "No account yet?",
+        "link": "Sign up"
+      }
+    },
+    "sign-up": {
+      "title": "Create Your Account",
+      "hint": "Sign up to start organizing your notes and boost your productivity.",
+      "form": {
+        "submit": "Sign up",
+        "hint": "Already have an account?",
+        "link": "Login"
+      }
+    },
+    "google": {
+      "hint": "Or log in with:"
+    }
+  }
+}

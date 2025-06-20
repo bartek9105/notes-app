@@ -5,8 +5,11 @@ import { GoogleAuthLayout } from "../google-auth-layout";
 import { AuthHint } from "../auth-hint/auth-hint";
 import { useSignIn } from "./sign-in-form.hooks";
 import { AuthForm } from "../auth-form";
+import { useTranslation } from "react-i18next";
 
 export const SignInForm = () => {
+  const { t } = useTranslation();
+
   const { handleSignInWithPassword, isSignUpPending } = useSignIn();
   const { mutateAsync: signInWithGoogle, isPending: isGoogleSignInPending } =
     useSignInWithGoogleMutation();
@@ -18,17 +21,20 @@ export const SignInForm = () => {
   };
 
   return (
-    <AuthFormLayout title="Welcome to Note" hint="Please log in to continue">
+    <AuthFormLayout
+      title={t("auth.sign-in.title")}
+      hint={t("auth.sign-in.hint")}
+    >
       <AuthForm
         onSubmit={handleSignInWithPassword}
         isPending={isPending}
-        buttonLabel="Login"
+        buttonLabel={t("auth.sign-in.form.submit")}
       />
       <GoogleAuthLayout onGoogleAuth={handleSignInWithGoogle} />
       <AuthHint
         linkTo={ROUTES.signUp()}
-        hint="No account yet?"
-        linkText="Sign up"
+        hint={t("auth.sign-in.form.hint")}
+        linkText={t("auth.sign-in.form.link")}
       />
     </AuthFormLayout>
   );
