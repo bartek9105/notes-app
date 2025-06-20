@@ -1,6 +1,6 @@
 import { PropsWithChildren } from "react";
 import styles from "./auth-form-layout.module.scss";
-import Logo from "../../../../assets/logo.svg";
+import { Logo } from "@/assets";
 import { Typography } from "@/components";
 
 interface AuthFormLayoutProps {

@@ -1,7 +1,5 @@
 import { ROUTES } from "@/consts";
-import HomeIcon from "../../../assets/home.svg";
-import ArchiveIcon from "../../../assets/archive.svg";
-import TagIcon from "../../../assets/tag.svg";
+import { ArchiveIcon, HomeIcon, TagIcon } from "@/assets";
 
 export const NAVIGATION_ITEMS = [
   {

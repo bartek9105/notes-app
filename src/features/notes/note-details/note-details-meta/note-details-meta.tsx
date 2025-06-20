@@ -1,10 +1,9 @@
 import { Separator, Typography } from "@/components";
 import styles from "./note-details-meta.module.scss";
-import Tag from "../../../../assets/tag.svg";
-import Clock from "../../../../assets/clock.svg";
 import cn from "classnames";
 import { formatDate, upperCaseFirstLetter } from "@/utils";
 import { Note } from "@/types";
+import { TagIcon, ClockIcon } from "@/assets";
 
 interface NoteDetailsMetaProps {
   note: Note;
@@ -19,7 +18,7 @@ export const NoteDetailsMeta = ({ note }: NoteDetailsMetaProps) => {
       <div className={styles.meta}>
         <div className={styles.metaRow}>
           <div className={cn(styles.metaCol, styles.metaColLabel)}>
-            <Tag />
+            <TagIcon />
             <Typography variant="text-6">Tags</Typography>
           </div>
           <div className={cn(styles.metaCol, styles.tags)}>
@@ -32,7 +31,7 @@ export const NoteDetailsMeta = ({ note }: NoteDetailsMetaProps) => {
         </div>
         <div className={styles.metaRow}>
           <div className={cn(styles.metaCol, styles.metaColLabel)}>
-            <Clock />
+            <ClockIcon />
             <Typography variant="text-6">Last edited</Typography>
           </div>
           <div className={styles.metaCol}>

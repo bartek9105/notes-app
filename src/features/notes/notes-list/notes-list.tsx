@@ -2,7 +2,8 @@ import styles from "./notes-list.module.scss";
 import { NoteListItem } from "./note-list-item";
 import { Button, InfiniteScrollContainer, Typography } from "@/components";
 import { motion } from "motion/react";
-import AddIcon from "../../../assets/plus.svg";
+import { PlusIcon } from "@/assets";
+
 import {
   itemVariantsAnimation,
   listVariantsAnimation,
@@ -26,7 +27,7 @@ export const NotesList = ({
         {title}
       </Typography>
       <div className={styles.glass}>
-        <Button className={styles.addNoteDesktopButton} leftIcon={<AddIcon />}>
+        <Button className={styles.addNoteDesktopButton} leftIcon={<PlusIcon />}>
           {buttonText}
         </Button>
       </div>
@@ -59,7 +60,7 @@ export const NotesList = ({
       <Button
         className={styles.addNoteMobileButton}
         iconOnly
-        icon={<AddIcon />}
+        icon={<PlusIcon />}
       />
     </>
   );

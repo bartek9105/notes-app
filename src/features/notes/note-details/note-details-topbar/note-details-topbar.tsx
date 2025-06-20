@@ -1,8 +1,6 @@
 import { Button, Separator } from "@/components";
 import styles from "./note-details-topbar.module.scss";
-import ChevronLeft from "../../../../assets/chevron-left.svg";
-import Bin from "../../../../assets/bin.svg";
-import Archive from "../../../../assets/archive.svg";
+import { ArchiveIcon, ChevronLeftIcon, BinIcon } from "@/assets";
 
 interface NoteDetailsTopbarPfgrops {
   onGoBack: () => void;
@@ -20,7 +18,7 @@ export const NoteDetailsTopbar = ({
       <div className={styles.content}>
         <Button
           onClick={onGoBack}
-          leftIcon={<ChevronLeft className={styles.icon} />}
+          leftIcon={<ChevronLeftIcon className={styles.icon} />}
           variant="secondary"
           className={styles.goBackButton}
           isFlat
@@ -31,7 +29,7 @@ export const NoteDetailsTopbar = ({
           <Button
             onClick={onDelete}
             iconOnly
-            icon={<Bin className={styles.icon} />}
+            icon={<BinIcon className={styles.icon} />}
             variant="secondary"
             className={styles.goBackButton}
             isFlat
@@ -39,7 +37,7 @@ export const NoteDetailsTopbar = ({
           <Button
             onClick={onArchive}
             iconOnly
-            icon={<Archive className={styles.icon} />}
+            icon={<ArchiveIcon className={styles.icon} />}
             variant="secondary"
             className={styles.goBackButton}
             isFlat
