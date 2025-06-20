@@ -1,4 +1,4 @@
-import { supabase } from "../../supabase";
+import { supabase } from "@/config";
 import { SignInWithPasswordPayload } from "./sign-in.types";
 
 export const signInWithGoogle = async () => {

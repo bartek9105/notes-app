@@ -1,4 +1,4 @@
-import { supabase } from "../../supabase";
+import { supabase } from "@/config";
 import { SignUpPayload } from "./sign-up.types";
 
 export const signUp = async (payload: SignUpPayload) => {

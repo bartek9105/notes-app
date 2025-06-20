@@ -1,6 +1,6 @@
 import { PropsWithChildren, useEffect, useState } from "react";
 import { SessionContext } from "./session.context";
-import { supabase } from "../../supabase";
+import { supabase } from "@/config";
 
 export const SessionProvider = ({ children }: PropsWithChildren) => {
   const [session, setSession] = useState<unknown>(null);

@@ -3,7 +3,7 @@ import { useGetAllNotesInfiniteQuery, useGetNoteQuery } from "@/api";
 import { useNavigate, useParams } from "react-router-dom";
 import { ROUTES } from "@/consts";
 
-const App = () => {
+export const Notes = () => {
   const { id } = useParams();
   const navigate = useNavigate();
 
@@ -44,5 +44,3 @@ const App = () => {
     />
   );
 };
-
-export default App;
