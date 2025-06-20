@@ -1,0 +1,32 @@
+@use "@/styles/mixins/responsive.scss" as *;
+
+.container {
+  height: 100%;
+  display: grid;
+  row-gap: 12px;
+  grid-template-rows: auto auto 1fr;
+
+  @include desktop-up {
+    grid-template-rows: auto 1fr;
+  }
+}
+
+.topbar {
+  @include desktop-up {
+    display: none;
+  }
+}
+
+.footer {
+  display: none;
+  @include desktop-up {
+    display: grid;
+    row-gap: 16px;
+  }
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: fit-content(100%) fit-content(100%);
+  column-gap: 16px;
+}

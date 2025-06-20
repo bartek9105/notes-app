@@ -1,6 +1,6 @@
 import { Button, Separator, Typography } from "@/components";
 import styles from "./google-auth-layout.module.scss";
-import { GoogleIcon } from "@/icons";
+import { GoogleIcon } from "@/assets";
 
 interface GoogleAuthLayoutProps {
   onGoogleAuth: () => void;

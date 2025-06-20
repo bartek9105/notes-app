@@ -3,7 +3,7 @@ import { useController } from "react-hook-form";
 import styles from "./field.module.scss";
 import { Typography } from "../typography";
 import { Input } from "../input";
-import { InfoIcon } from "@/icons";
+import { InfoIcon } from "@/assets";
 
 type FieldProps = InputHTMLAttributes<HTMLInputElement> & {
   name: string;

@@ -18,3 +18,13 @@ export const getAllNotes = async ({
     hasNextPage: to + 1 < (count as number),
   };
 };
+
+export const getNote = async (id: Note["id"]) => {
+  const { data } = await supabase
+    .from("notes")
+    .select("*")
+    .eq("id", id)
+    .single();
+
+  return data;
+};

@@ -1,4 +1,4 @@
-@use "../../styles/mixins/responsive.scss" as *;
+@use "@/styles/mixins/responsive.scss" as *;
 
 .button {
   width: 100%;
@@ -11,6 +11,7 @@
   border-radius: 8px;
   cursor: pointer;
   transition: all ease-in-out 0.2s;
+  outline: none;
   &:disabled {
     pointer-events: none;
     color: var(--neutral-300);
@@ -65,4 +66,12 @@
   &:disabled {
     border-color: transparent;
   }
+}
+
+.isFlat {
+  background: none;
+  box-shadow: none;
+  padding: 0 !important;
+  border: 0 !important;
+  height: fit-content;
 }

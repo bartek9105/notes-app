@@ -1,7 +1,8 @@
-import { useInfiniteQuery } from "@tanstack/react-query";
-import { getAllNotes } from "./notes.api";
+import { useInfiniteQuery, useQuery } from "@tanstack/react-query";
+import { getAllNotes, getNote } from "./notes.api";
 import { NOTES_QUERY_KEYS } from "./notes.const";
-import { mapInfiniteQueryResponse } from "@/utils";
+import { Note } from "@/types";
+import { mapGetAllNotesResponse } from "./notes.utils";
 
 export const useGetAllNotesInfiniteQuery = () => {
   const { data, ...rest } = useInfiniteQuery({
@@ -14,7 +15,15 @@ export const useGetAllNotesInfiniteQuery = () => {
   });
 
   return {
-    data: data ? mapInfiniteQueryResponse(data) : [],
+    data: mapGetAllNotesResponse(data),
     ...rest,
   };
+};
+
+export const useGetNoteQuery = (id: Note["id"]) => {
+  return useQuery({
+    queryKey: [NOTES_QUERY_KEYS.getNote, id],
+    queryFn: () => getNote(id),
+    enabled: !!id,
+  });
 };

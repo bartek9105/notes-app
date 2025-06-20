@@ -1,0 +1,34 @@
+@use "@/styles/mixins/responsive.scss" as *;
+
+.container {
+  display: grid;
+  row-gap: 12px;
+  @include tablet-up {
+    row-gap: 16px;
+  }
+}
+
+.meta {
+  display: grid;
+  row-gap: 4px;
+}
+
+.metaCol {
+  display: flex;
+  align-items: center;
+}
+
+.metaColLabel {
+  gap: 6px;
+}
+
+.tags {
+  &:not(:last-child)::after {
+    content: ",\00a0";
+  }
+}
+
+.metaRow {
+  display: grid;
+  grid-template-columns: 115px 1fr;
+}

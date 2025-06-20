@@ -1,0 +1,30 @@
+@use "@/styles/mixins/responsive.scss" as *;
+
+.container {
+  display: grid;
+  row-gap: 12px;
+  @include tablet-up {
+    row-gap: 16px;
+  }
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.containerRightCol {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.goBackButton {
+  background: var(--neutral-0);
+  width: fit-content;
+}
+
+.icon {
+  font-size: 18px;
+}

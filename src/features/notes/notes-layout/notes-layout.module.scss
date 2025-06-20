@@ -1,4 +1,4 @@
-@use "../../../styles/mixins/responsive.scss" as *;
+@use "@/styles/mixins/responsive.scss" as *;
 
 $layout-border: 1px solid var(--neutral-200);
 
@@ -26,10 +26,12 @@ $layout-border: 1px solid var(--neutral-200);
 }
 
 .details {
-  display: none;
+  height: 100%;
+  padding: 20px 16px;
+  @include tablet-up {
+    padding: 24px 32px;
+  }
   @include desktop-up {
-    display: unset;
-    width: 100%;
     padding: 20px 24px;
     border-right: $layout-border;
   }

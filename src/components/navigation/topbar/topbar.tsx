@@ -1,10 +1,8 @@
 import { NavLink } from "react-router-dom";
-import Logo from "../../../assets/logo.svg";
-import SettingsIcon from "../../../assets/settings.svg";
-import HamburgerIcon from "../../../assets/hamburger.svg";
 import styles from "./topbar.module.scss";
 import { ROUTES } from "@/consts";
 import { Input, Typography } from "@/components";
+import { Logo, HamburgerIcon, SettingsIcon } from "@/assets";
 
 interface TopbarProps {
   isSidebarOpen: boolean;

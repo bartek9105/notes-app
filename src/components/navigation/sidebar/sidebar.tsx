@@ -1,12 +1,10 @@
 import styles from "./sidebar.module.scss";
-import Logo from "../../../assets/logo.svg";
-import ChevronRight from "../../../assets/chevron-right.svg";
-import Close from "../../../assets/close.svg";
 import { NAVIGATION_ITEMS } from "./sidebar.const";
 import { NavLink } from "react-router-dom";
 import cn from "classnames";
 import { Separator, Typography } from "@/components";
 import { motion } from "motion/react";
+import { Logo, ClockIcon, ChevronRightIcon } from "@/assets";
 
 const sidebarVariants = {
   open: { left: 0, transition: { type: "slide" } },
@@ -30,7 +28,7 @@ export const Sidebar = ({ onClose }: SidebarProps) => {
     >
       <div className={styles.topbar}>
         <Logo />
-        <Close onClick={onClose} />
+        <ClockIcon onClick={onClose} />
       </div>
       <ul className={styles.list}>
         {NAVIGATION_ITEMS.map((item) => (
@@ -48,7 +46,7 @@ export const Sidebar = ({ onClose }: SidebarProps) => {
                       {item.label}
                     </Typography>
                   </div>
-                  {isActive && <ChevronRight />}
+                  {isActive && <ChevronRightIcon />}
                 </div>
               )}
             </NavLink>

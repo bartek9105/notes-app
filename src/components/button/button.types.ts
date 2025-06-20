@@ -8,6 +8,7 @@ type BaseButtonProps = Omit<
 > & {
   variant?: ButtonVariant;
   isLoading?: boolean;
+  isFlat?: boolean;
 };
 
 type IconOnlyButtonProps = BaseButtonProps & {

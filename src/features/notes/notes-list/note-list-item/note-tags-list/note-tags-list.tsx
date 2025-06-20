@@ -1,13 +1,11 @@
 import { Note } from "@/types";
 import styles from "./note-tags-list.module.scss";
 import { Typography } from "@/components";
+import { upperCaseFirstLetter } from "@/utils";
 
 interface NoteTagsListProps {
   tags: Note["tags"];
 }
-
-const upperCaseFirstLetter = (tag: string) =>
-  tag.charAt(0).toUpperCase() + tag.slice(1);
 
 export const NoteTagsList = ({ tags }: NoteTagsListProps) => {
   return (

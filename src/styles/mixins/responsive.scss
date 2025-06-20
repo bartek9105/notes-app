@@ -1,4 +1,4 @@
-@use "../variables/sizes.scss" as *;
+@use "@/styles/variables/sizes.scss" as *;
 
 @mixin tablet-up {
   @media (min-width: $tablet-min-width) {

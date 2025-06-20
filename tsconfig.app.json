@@ -11,13 +11,14 @@
       "@/components": ["./components"],
       "@/types": ["./types"],
       "@/utils": ["./utils"],
-      "@/icons": ["./icons"],
       "@/providers": ["./providers"],
       "@/api": ["./api"],
       "@/consts": ["./consts"],
       "@/features": ["./features"],
       "@/layouts": ["./layouts"],
-      "@/hooks": ["./hooks"]
+      "@/hooks": ["./hooks"],
+      "@/styles": ["./styles"],
+      "@/assets": ["./assets"]
     },
 
     /* Bundler mode */
