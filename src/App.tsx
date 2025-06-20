@@ -17,13 +17,13 @@ const App = () => {
     hasNextPage,
   } = useGetAllNotesInfiniteQuery();
 
-  const { data, isLoading: isLoadingNote } = useGetNoteQuery(
+  const { data: note, isLoading: isLoadingNote } = useGetNoteQuery(
     id || notes[0]?.id
   );
 
   return (
     <NotesLayout
-      NotesListComponent={
+      NotesList={
         <NotesList
           title="All notes"
           buttonText="Create New Note"
@@ -33,9 +33,9 @@ const App = () => {
           {...{ notes, isLoading, isFetchingNextPage, hasNextPage }}
         />
       }
-      NoteDetailsComponent={
+      NoteDetails={
         <NoteDetails
-          note={data}
+          note={note}
           isLoading={isLoadingNote}
           onGoBack={() => navigate(ROUTES.notes.root())}
         />
