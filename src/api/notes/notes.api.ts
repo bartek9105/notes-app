@@ -1,5 +1,5 @@
+import { supabase } from "@/config";
 import { PaginatedResponse, Note } from "@/types";
-import { supabase } from "../../supabase";
 
 export const getAllNotes = async ({
   pageParam = 0,

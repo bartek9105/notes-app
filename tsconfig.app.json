@@ -18,7 +18,10 @@
       "@/layouts": ["./layouts"],
       "@/hooks": ["./hooks"],
       "@/styles": ["./styles"],
-      "@/assets": ["./assets"]
+      "@/assets": ["./assets"],
+      "@/pages": ["./pages"],
+      "@/guards": ["./guards"],
+      "@/config": ["./config"]
     },
 
     /* Bundler mode */
