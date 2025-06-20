@@ -3,6 +3,7 @@ import styles from "./topbar.module.scss";
 import { ROUTES } from "@/consts";
 import { Input, Typography } from "@/components";
 import { Logo, HamburgerIcon, SettingsIcon } from "@/assets";
+import { useTranslation } from "react-i18next";
 
 interface TopbarProps {
   isSidebarOpen: boolean;
@@ -10,6 +11,8 @@ interface TopbarProps {
 }
 
 export const Topbar = ({ onOpenMenu, isSidebarOpen }: TopbarProps) => {
+  const { t } = useTranslation();
+
   return (
     <div className={styles.container}>
       <div className={styles.leftSide}>
@@ -22,14 +25,14 @@ export const Topbar = ({ onOpenMenu, isSidebarOpen }: TopbarProps) => {
           </>
         )}
         <Typography variant="text-1" className={styles.title}>
-          All notes
+          {t("topbar.title")}
         </Typography>
       </div>
       <div className={styles.rightSide}>
         <Input
           className={styles.search}
           name="search"
-          placeholder="Search by title, content, or tags"
+          placeholder={t("topbar.search.placeholder")}
         />
         <NavLink to={ROUTES.settings()}>
           <SettingsIcon />

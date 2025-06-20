@@ -5,6 +5,7 @@ import { formatDate, upperCaseFirstLetter } from "@/utils";
 import { Note } from "@/types";
 import { TagIcon, ClockIcon } from "@/assets";
 import { ReactNode } from "react";
+import { useTranslation } from "react-i18next";
 
 interface NoteDetailsMetaProps {
   note: Note;
@@ -33,6 +34,8 @@ const NoteDetailsMetaRow = ({
 };
 
 export const NoteDetailsMeta = ({ note }: NoteDetailsMetaProps) => {
+  const { t } = useTranslation();
+
   return (
     <div className={styles.container}>
       <Typography variant="text-1" as="h1">
@@ -41,7 +44,7 @@ export const NoteDetailsMeta = ({ note }: NoteDetailsMetaProps) => {
       <div className={styles.meta}>
         <NoteDetailsMetaRow
           LabelIcon={<TagIcon />}
-          label="Tags"
+          label={t("notes.tags")}
           MetaValue={note.tags?.map((tag, index) => (
             <Typography variant="text-6" key={index} className={styles.tags}>
               {upperCaseFirstLetter(tag)}
@@ -50,7 +53,7 @@ export const NoteDetailsMeta = ({ note }: NoteDetailsMetaProps) => {
         />
         <NoteDetailsMetaRow
           LabelIcon={<ClockIcon />}
-          label="Last edited"
+          label={t("notes.last-edited")}
           MetaValue={
             <Typography variant="text-6">
               {formatDate(note.created_at)}

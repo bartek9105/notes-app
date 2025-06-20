@@ -12,6 +12,7 @@ import { useEffect } from "react";
 import { NoteDetailsTopbar } from "./note-details-topbar";
 import { NoteDetailsMeta } from "./note-details-meta";
 import { NoteDetailsSkeleton } from "./note-details-skeleton";
+import { useTranslation } from "react-i18next";
 
 export interface NoteDetailsProps {
   note?: Note | null;
@@ -24,6 +25,8 @@ export const NoteDetails = ({
   isLoading,
   onGoBack,
 }: NoteDetailsProps) => {
+  const { t } = useTranslation();
+
   const formParams = useBaseForm({
     defaultValues: {
       note: note?.description || "",
@@ -55,8 +58,8 @@ export const NoteDetails = ({
       <div className={styles.footer}>
         <Separator />
         <div className={styles.buttons}>
-          <Button>Save Note</Button>
-          <Button variant="secondary">Cancel</Button>
+          <Button>{t("notes.save-note")}</Button>
+          <Button variant="secondary">{t("notes.cancel")}</Button>
         </div>
       </div>
     </div>

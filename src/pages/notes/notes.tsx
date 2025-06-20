@@ -2,8 +2,11 @@ import { NoteDetails, NotesLayout, NotesList } from "@/features";
 import { useGetAllNotesInfiniteQuery, useGetNoteQuery } from "@/api";
 import { useNavigate, useParams } from "react-router-dom";
 import { ROUTES } from "@/consts";
+import { useTranslation } from "react-i18next";
 
 export const Notes = () => {
+  const { t } = useTranslation();
+
   const { id } = useParams();
   const navigate = useNavigate();
 
@@ -25,8 +28,8 @@ export const Notes = () => {
     <NotesLayout
       NotesList={
         <NotesList
-          title="All notes"
-          buttonText="Create New Note"
+          title={t("notes.title")}
+          buttonText={t("notes.create-new-button")}
           onFetchNextPage={fetchNextPage}
           onNoteSelect={(id) => navigate(ROUTES.notes.details(id))}
           activeNoteId={id}

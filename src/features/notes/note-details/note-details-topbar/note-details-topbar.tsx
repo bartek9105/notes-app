@@ -1,6 +1,7 @@
 import { Button, Separator } from "@/components";
 import styles from "./note-details-topbar.module.scss";
 import { ArchiveIcon, ChevronLeftIcon, BinIcon } from "@/assets";
+import { useTranslation } from "react-i18next";
 
 interface NoteDetailsTopbarPfgrops {
   onGoBack: () => void;
@@ -13,6 +14,8 @@ export const NoteDetailsTopbar = ({
   onDelete,
   onGoBack,
 }: NoteDetailsTopbarPfgrops) => {
+  const { t } = useTranslation();
+
   return (
     <div className={styles.container}>
       <div className={styles.content}>
@@ -23,7 +26,7 @@ export const NoteDetailsTopbar = ({
           className={styles.goBackButton}
           isFlat
         >
-          Go Back
+          {t("notes.go-back")}
         </Button>
         <div className={styles.containerRightCol}>
           <Button
@@ -43,7 +46,7 @@ export const NoteDetailsTopbar = ({
             isFlat
           />
           <Button variant="secondary" isFlat>
-            Cancel
+            {t("notes.cancel")}
           </Button>
         </div>
       </div>
