@@ -1,11 +1,12 @@
-import { Separator, Typography } from "@/components";
+import { SelectField, Separator, Typography } from "@/components";
 import styles from "./note-details-meta.module.scss";
 import cn from "classnames";
-import { formatDate, upperCaseFirstLetter } from "@/utils";
+import { formatDate } from "@/utils";
 import { Note } from "@/types";
 import { TagIcon, ClockIcon } from "@/assets";
 import { ReactNode } from "react";
 import { useTranslation } from "react-i18next";
+import { NoteDetailsMetaTitleField } from "./note-details-meta-title-field";
 
 interface NoteDetailsMetaProps {
   note: Note;
@@ -36,26 +37,30 @@ const NoteDetailsMetaRow = ({
 export const NoteDetailsMeta = ({ note }: NoteDetailsMetaProps) => {
   const { t } = useTranslation();
 
+  const renderTagsList = () => {
+    return (
+      <SelectField
+        className={styles.select}
+        name="tags"
+        placeholder={t("notes.tags-placeholder")}
+      />
+    );
+  };
+
   return (
     <div className={styles.container}>
-      <Typography variant="text-1" as="h1">
-        {note.title}
-      </Typography>
+      <NoteDetailsMetaTitleField />
       <div className={styles.meta}>
         <NoteDetailsMetaRow
           LabelIcon={<TagIcon />}
           label={t("notes.tags")}
-          MetaValue={note.tags?.map((tag, index) => (
-            <Typography variant="text-6" key={index} className={styles.tags}>
-              {upperCaseFirstLetter(tag)}
-            </Typography>
-          ))}
+          MetaValue={renderTagsList()}
         />
         <NoteDetailsMetaRow
           LabelIcon={<ClockIcon />}
           label={t("notes.last-edited")}
           MetaValue={
-            <Typography variant="text-6">
+            <Typography variant="text-5">
               {formatDate(note.created_at)}
             </Typography>
           }

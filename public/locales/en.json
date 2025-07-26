@@ -12,7 +12,9 @@
     "last-edited": "Last edited",
     "go-back": "Go back",
     "cancel": "Cancel",
-    "save-note": "Save Note"
+    "save-note": "Save Note",
+    "tags-placeholder": "Select tag or create new one by typing",
+    "note-description-empty-state": "Start typing your note here..."
   },
   "auth": {
     "form": {

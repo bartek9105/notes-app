@@ -1,46 +1,48 @@
-import { Note } from "@/types";
-import {
-  BaseForm,
-  Button,
-  Separator,
-  TextareaField,
-  useBaseForm,
-} from "@/components";
+import { Note, UpdateNotePayload } from "@/types";
+import { SkeletonLayout } from "@/components";
 import styles from "./note-details.module.scss";
 
-import { useEffect } from "react";
 import { NoteDetailsTopbar } from "./note-details-topbar";
-import { NoteDetailsMeta } from "./note-details-meta";
-import { NoteDetailsSkeleton } from "./note-details-skeleton";
-import { useTranslation } from "react-i18next";
+import { NoteDetailsForm } from "./note-details-form/note-details-form";
+import { AnimatePresence, motion } from "motion/react";
+import { APPEAR_ANIMATION } from "@/consts";
 
 export interface NoteDetailsProps {
   note?: Note | null;
   isLoading: boolean;
+  isUpdating: boolean;
   onGoBack: () => void;
+  onSaveNote: (payload: UpdateNotePayload) => void;
 }
 
 export const NoteDetails = ({
   note,
   isLoading,
+  isUpdating,
   onGoBack,
+  onSaveNote,
 }: NoteDetailsProps) => {
-  const { t } = useTranslation();
-
-  const formParams = useBaseForm({
-    defaultValues: {
-      note: note?.description || "",
-    },
-  });
-
-  useEffect(() => {
-    if (note?.description) {
-      formParams.reset({ note: note.description });
+  const renderContent = () => {
+    if (isLoading || !note) {
+      return (
+        <div className={styles.skeleton}>
+          <SkeletonLayout rows={3} />
+          <SkeletonLayout rows={3} showGap={false} />
+        </div>
+      );
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [note?.description]);
 
-  if (isLoading || !note) return <NoteDetailsSkeleton />;
+    return (
+      <AnimatePresence>
+        <motion.div key="content" {...APPEAR_ANIMATION}>
+          <NoteDetailsForm
+            onSubmit={onSaveNote}
+            {...{ note, isLoading, isUpdating }}
+          />
+        </motion.div>
+      </AnimatePresence>
+    );
+  };
 
   return (
     <div className={styles.container}>
@@ -49,19 +51,10 @@ export const NoteDetails = ({
           onGoBack={onGoBack}
           onArchive={() => {}}
           onDelete={() => {}}
+          disabled={isLoading}
         />
       </div>
-      <NoteDetailsMeta note={note} />
-      <BaseForm params={formParams} onSubmit={() => {}}>
-        <TextareaField name="note" />
-      </BaseForm>
-      <div className={styles.footer}>
-        <Separator />
-        <div className={styles.buttons}>
-          <Button>{t("notes.save-note")}</Button>
-          <Button variant="secondary">{t("notes.cancel")}</Button>
-        </div>
-      </div>
+      {renderContent()}
     </div>
   );
 };

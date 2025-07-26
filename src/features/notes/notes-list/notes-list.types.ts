@@ -10,4 +10,6 @@ export interface NotesListProps {
   hasNextPage: boolean;
   onFetchNextPage: () => void;
   activeNoteId?: string;
+  onCreateNote: () => void;
+  isCreatingNewNote: boolean;
 }

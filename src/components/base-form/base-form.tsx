@@ -12,6 +12,7 @@ interface BaseFormProps<T extends FieldValues> {
   className?: string;
   params: UseFormReturn<T>;
   onSubmit: SubmitHandler<T>;
+  id?: string;
 }
 
 export const BaseForm = <T extends FieldValues>({
@@ -19,12 +20,14 @@ export const BaseForm = <T extends FieldValues>({
   params,
   className,
   onSubmit,
+  id,
 }: PropsWithChildren<BaseFormProps<T>>) => {
   return (
     <FormProvider {...params}>
       <form
         className={cn(styles.container, className)}
         onSubmit={params.handleSubmit(onSubmit)}
+        id={id}
       >
         {children}
       </form>

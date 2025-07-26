@@ -7,12 +7,14 @@ interface NoteDetailsTopbarPfgrops {
   onGoBack: () => void;
   onArchive: () => void;
   onDelete: () => void;
+  disabled?: boolean;
 }
 
 export const NoteDetailsTopbar = ({
   onArchive,
   onDelete,
   onGoBack,
+  disabled,
 }: NoteDetailsTopbarPfgrops) => {
   const { t } = useTranslation();
 
@@ -36,6 +38,7 @@ export const NoteDetailsTopbar = ({
             variant="secondary"
             className={styles.goBackButton}
             isFlat
+            disabled={disabled}
           />
           <Button
             onClick={onArchive}
@@ -44,8 +47,9 @@ export const NoteDetailsTopbar = ({
             variant="secondary"
             className={styles.goBackButton}
             isFlat
+            disabled={disabled}
           />
-          <Button variant="secondary" isFlat>
+          <Button variant="secondary" isFlat disabled={disabled}>
             {t("notes.cancel")}
           </Button>
         </div>

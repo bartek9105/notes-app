@@ -10,7 +10,7 @@
 
 .meta {
   display: grid;
-  row-gap: 4px;
+  row-gap: 8px;
 }
 
 .metaCol {
@@ -31,4 +31,14 @@
 .metaRow {
   display: grid;
   grid-template-columns: 115px 1fr;
+}
+
+.tagsEmptyHint {
+  color: var(--neutral-400);
+}
+
+.select {
+  @include desktop-up {
+    max-width: fit-content;
+  }
 }
