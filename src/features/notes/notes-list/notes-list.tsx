@@ -20,6 +20,8 @@ export const NotesList = ({
   hasNextPage,
   onFetchNextPage,
   activeNoteId,
+  onCreateNote,
+  isCreatingNewNote,
 }: NotesListProps) => {
   return (
     <>
@@ -27,7 +29,12 @@ export const NotesList = ({
         {title}
       </Typography>
       <div className={styles.glass}>
-        <Button className={styles.addNoteDesktopButton} leftIcon={<PlusIcon />}>
+        <Button
+          className={styles.addNoteDesktopButton}
+          leftIcon={<PlusIcon />}
+          onClick={onCreateNote}
+          isLoading={isCreatingNewNote}
+        >
           {buttonText}
         </Button>
       </div>
@@ -61,6 +68,8 @@ export const NotesList = ({
         className={styles.addNoteMobileButton}
         iconOnly
         icon={<PlusIcon />}
+        onClick={onCreateNote}
+        isLoading={isCreatingNewNote}
       />
     </>
   );

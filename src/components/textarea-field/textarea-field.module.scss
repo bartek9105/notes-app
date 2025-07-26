@@ -8,4 +8,8 @@
   letter-spacing: -0.2px;
   line-height: 130%;
   resize: none;
+  padding: 12px 0;
+  &::placeholder {
+    color: var(--neutral-400);
+  }
 }

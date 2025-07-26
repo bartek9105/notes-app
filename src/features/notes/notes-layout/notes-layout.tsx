@@ -15,7 +15,7 @@ export function NotesLayout({
 }: PropsWithChildren<NotesLayoutProps>) {
   const { isDesktop } = useScreenSize();
 
-  const shouldRenderNotesList = !isNoteSelected || isDesktop;
+  const shouldRenderNotesList = isDesktop || (!isNoteSelected && !isDesktop);
 
   return (
     <div className={styles.container}>

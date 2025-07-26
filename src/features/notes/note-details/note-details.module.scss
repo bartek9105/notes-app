@@ -3,11 +3,12 @@
 .container {
   height: 100%;
   display: grid;
+  grid-template-rows: auto 1fr;
   row-gap: 12px;
-  grid-template-rows: auto auto 1fr;
 
   @include desktop-up {
-    grid-template-rows: auto 1fr;
+    row-gap: 0;
+    grid-template-rows: 1fr;
   }
 }
 
@@ -17,16 +18,8 @@
   }
 }
 
-.footer {
-  display: none;
-  @include desktop-up {
-    display: grid;
-    row-gap: 16px;
-  }
-}
-
-.buttons {
-  display: grid;
-  grid-template-columns: fit-content(100%) fit-content(100%);
-  column-gap: 16px;
+.skeleton {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }

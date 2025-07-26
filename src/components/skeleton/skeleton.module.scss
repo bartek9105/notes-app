@@ -1,4 +1,9 @@
 .container {
+  display: grid;
+  row-gap: 12px;
+}
+
+.skeleton {
   background-color: #e2e8f0;
   border-radius: 4px;
   animation: pulse 1.5s infinite ease-in-out;

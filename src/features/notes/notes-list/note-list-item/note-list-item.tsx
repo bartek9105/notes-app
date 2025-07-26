@@ -19,7 +19,7 @@ export const NoteListItem = ({ note, isActive }: NoteListItemProps) => {
       aria-pressed="false"
       className={cn(styles.container, { [styles.active]: isActive })}
     >
-      <Typography variant="text-3">{title}</Typography>
+      <Typography variant="text-3">{title || "Untitled"}</Typography>
       <NoteTagsList tags={tags} />
       <Typography variant="text-6" className={styles.date}>
         {formatDate(created_at)}
