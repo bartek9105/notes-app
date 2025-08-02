@@ -9,6 +9,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { ROUTES } from "@/consts";
 import { useTranslation } from "react-i18next";
 import { UpdateNotePayload } from "types/notes";
+import { toast } from "sonner";
 
 export const Notes = () => {
   const { t } = useTranslation();
@@ -38,8 +39,8 @@ export const Notes = () => {
       if (response?.id) {
         navigate(ROUTES.notes.details(response.id));
       }
-    } catch (e) {
-      console.log("error", e);
+    } catch {
+      toast.error("Something went wrong when creating note");
     }
   };
 
@@ -49,8 +50,9 @@ export const Notes = () => {
         id: activeNoteId,
         ...payload,
       });
-    } catch (e) {
-      console.log("error", e);
+      toast.success("Note saved successfuly");
+    } catch {
+      toast.error("Something went wrong when saving note");
     }
   };
 
