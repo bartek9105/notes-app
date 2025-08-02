@@ -5,6 +5,7 @@ import "./index.css";
 import "./config/i18n";
 import { QueryProvider, SessionProvider } from "@/providers";
 import { AppRoutes } from "@/config";
+import { Toaster } from "sonner";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
@@ -12,6 +13,7 @@ createRoot(document.getElementById("root")!).render(
       <QueryProvider>
         <SessionProvider>
           <AppRoutes />
+          <Toaster richColors />
         </SessionProvider>
       </QueryProvider>
     </BrowserRouter>
