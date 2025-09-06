@@ -1,4 +1,3 @@
-import { Note, UpdateNotePayload } from "@/types";
 import { SkeletonLayout } from "@/components";
 import styles from "./note-details.module.scss";
 
@@ -6,24 +5,17 @@ import { NoteDetailsTopbar } from "./note-details-topbar";
 import { NoteDetailsForm } from "./note-details-form/note-details-form";
 import { AnimatePresence, motion } from "motion/react";
 import { APPEAR_ANIMATION } from "@/consts";
+import { useNoteDetails } from "./note-details.hooks";
 
 export interface NoteDetailsProps {
-  note?: Note | null;
-  isLoading: boolean;
-  isUpdating: boolean;
   onGoBack: () => void;
-  onSaveNote: (payload: UpdateNotePayload) => void;
 }
 
-export const NoteDetails = ({
-  note,
-  isLoading,
-  isUpdating,
-  onGoBack,
-  onSaveNote,
-}: NoteDetailsProps) => {
+export const NoteDetails = ({ onGoBack }: NoteDetailsProps) => {
+  const { note, isLoadingNote, updateNote, isUpdatingNote } = useNoteDetails();
+
   const renderContent = () => {
-    if (isLoading || !note) {
+    if (isLoadingNote || !note) {
       return (
         <div className={styles.skeleton}>
           <SkeletonLayout rows={3} />
@@ -36,8 +28,10 @@ export const NoteDetails = ({
       <AnimatePresence>
         <motion.div key="content" {...APPEAR_ANIMATION}>
           <NoteDetailsForm
-            onSubmit={onSaveNote}
-            {...{ note, isLoading, isUpdating }}
+            onSubmit={updateNote}
+            note={note}
+            isLoading={isLoadingNote}
+            isUpdating={isUpdatingNote}
           />
         </motion.div>
       </AnimatePresence>
@@ -51,7 +45,7 @@ export const NoteDetails = ({
           onGoBack={onGoBack}
           onArchive={() => {}}
           onDelete={() => {}}
-          disabled={isLoading}
+          disabled={isLoadingNote}
         />
       </div>
       {renderContent()}

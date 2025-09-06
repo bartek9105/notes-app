@@ -9,20 +9,24 @@ import {
   listVariantsAnimation,
 } from "./notes-list.const";
 import { NotesListProps } from "./notes-list.types";
+import { useNotesList } from "./notes-list.hooks";
 
 export const NotesList = ({
   title,
-  notes,
   buttonText,
   onNoteSelect,
-  isLoading,
-  isFetchingNextPage,
-  hasNextPage,
-  onFetchNextPage,
-  activeNoteId,
-  onCreateNote,
-  isCreatingNewNote,
 }: NotesListProps) => {
+  const {
+    createNote,
+    isCreatingNewNote,
+    notes,
+    isLoading,
+    isFetchingNextPage,
+    fetchNextPage,
+    hasNextPage,
+    activeNoteId,
+  } = useNotesList();
+
   return (
     <>
       <Typography variant="text-1" className={styles.title}>
@@ -32,7 +36,7 @@ export const NotesList = ({
         <Button
           className={styles.addNoteDesktopButton}
           leftIcon={<PlusIcon />}
-          onClick={onCreateNote}
+          onClick={createNote}
           isLoading={isCreatingNewNote}
         >
           {buttonText}
@@ -42,7 +46,7 @@ export const NotesList = ({
         isFetching={isLoading}
         isFetchingNextPage={isFetchingNextPage}
         hasNextPage={hasNextPage}
-        onScrollEndCallback={onFetchNextPage}
+        onScrollEndCallback={fetchNextPage}
       >
         <motion.ul
           variants={listVariantsAnimation}
@@ -68,7 +72,7 @@ export const NotesList = ({
         className={styles.addNoteMobileButton}
         iconOnly
         icon={<PlusIcon />}
-        onClick={onCreateNote}
+        onClick={createNote}
         isLoading={isCreatingNewNote}
       />
     </>
