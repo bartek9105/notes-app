@@ -14,7 +14,20 @@
     "cancel": "Cancel",
     "save-note": "Save Note",
     "tags-placeholder": "Select tag or create new one by typing",
-    "note-description-empty-state": "Start typing your note here..."
+    "note-description-empty-state": "Start typing your note here...",
+    "delete-note-button": "Delete Note",
+    "delete-note-modal": {
+      "title": "Delete Note",
+      "hint": "Are you sure you want to permanently delete this note? This action cannot be undone.",
+      "buttons": {
+        "cancel": "Cancel",
+        "confirm": "Delete Note"
+      },
+      "toasts": {
+        "success": "Note deleted successfuly",
+        "error": "Something went wrong"
+      }
+    }
   },
   "auth": {
     "form": {

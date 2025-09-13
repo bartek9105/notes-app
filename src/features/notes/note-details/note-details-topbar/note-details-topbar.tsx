@@ -1,18 +1,17 @@
 import { Button, Separator } from "@/components";
 import styles from "./note-details-topbar.module.scss";
-import { ArchiveIcon, ChevronLeftIcon, BinIcon } from "@/assets";
+import { ArchiveIcon, ChevronLeftIcon } from "@/assets";
 import { useTranslation } from "react-i18next";
+import { DeleteNote } from "../../delete-note";
 
 interface NoteDetailsTopbarPfgrops {
   onGoBack: () => void;
   onArchive: () => void;
-  onDelete: () => void;
   disabled?: boolean;
 }
 
 export const NoteDetailsTopbar = ({
   onArchive,
-  onDelete,
   onGoBack,
   disabled,
 }: NoteDetailsTopbarPfgrops) => {
@@ -31,15 +30,7 @@ export const NoteDetailsTopbar = ({
           {t("notes.go-back")}
         </Button>
         <div className={styles.containerRightCol}>
-          <Button
-            onClick={onDelete}
-            iconOnly
-            icon={<BinIcon className={styles.icon} />}
-            variant="secondary"
-            className={styles.goBackButton}
-            isFlat
-            disabled={disabled}
-          />
+          <DeleteNote />
           <Button
             onClick={onArchive}
             iconOnly

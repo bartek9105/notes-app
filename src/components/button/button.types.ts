@@ -1,6 +1,6 @@
 import { ButtonHTMLAttributes, ReactNode } from "react";
 
-type ButtonVariant = "primary" | "secondary" | "border";
+export type ButtonVariant = "primary" | "secondary" | "border" | "danger";
 
 type BaseButtonProps = Omit<
   ButtonHTMLAttributes<HTMLButtonElement>,

@@ -68,6 +68,14 @@
   }
 }
 
+.danger {
+  color: var(--neutral-0);
+  background-color: var(--red-500);
+  &:hover {
+    background-color: var(--red-100);
+  }
+}
+
 .isFlat {
   background: none;
   box-shadow: none;

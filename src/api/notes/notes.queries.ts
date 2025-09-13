@@ -4,7 +4,13 @@ import {
   useQuery,
   useQueryClient,
 } from "@tanstack/react-query";
-import { createNote, getAllNotes, getNote, updateNote } from "./notes.api";
+import {
+  createNote,
+  deleteNote,
+  getAllNotes,
+  getNote,
+  updateNote,
+} from "./notes.api";
 import { NOTES_QUERY_KEYS } from "./notes.const";
 import { Note } from "@/types";
 import { mapGetAllNotesResponse } from "./notes.utils";
@@ -61,6 +67,19 @@ export const useUpdateNoteMutation = () => {
           queryKey: [NOTES_QUERY_KEYS.getNote, data?.id],
         }),
       ]);
+    },
+  });
+};
+
+export const useDeleteNoteMutation = () => {
+  const queryClient = useQueryClient();
+
+  return useMutation({
+    mutationFn: deleteNote,
+    onSuccess: async () => {
+      await queryClient.invalidateQueries({
+        queryKey: [NOTES_QUERY_KEYS.getAllNotes],
+      });
     },
   });
 };

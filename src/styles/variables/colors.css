@@ -26,4 +26,6 @@
   --shadow-color-300: rgba(202, 207, 216, 0.7);
 
   --bg-glass: rgba(255, 255, 255, 0.65);
+
+  --overlay-color: rgba(0, 0, 0, 0.5);
 }

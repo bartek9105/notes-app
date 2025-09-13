@@ -44,7 +44,6 @@ export const NoteDetails = ({ onGoBack }: NoteDetailsProps) => {
         <NoteDetailsTopbar
           onGoBack={onGoBack}
           onArchive={() => {}}
-          onDelete={() => {}}
           disabled={isLoadingNote}
         />
       </div>
