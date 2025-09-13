@@ -10,6 +10,7 @@ import {
 } from "./notes-list.const";
 import { NotesListProps } from "./notes-list.types";
 import { useNotesList } from "./notes-list.hooks";
+import { NotesListEmptyState } from "./notes-list-empty-state";
 
 export const NotesList = ({
   title,
@@ -27,21 +28,12 @@ export const NotesList = ({
     activeNoteId,
   } = useNotesList();
 
-  return (
-    <>
-      <Typography variant="text-1" className={styles.title}>
-        {title}
-      </Typography>
-      <div className={styles.glass}>
-        <Button
-          className={styles.addNoteDesktopButton}
-          leftIcon={<PlusIcon />}
-          onClick={createNote}
-          isLoading={isCreatingNewNote}
-        >
-          {buttonText}
-        </Button>
-      </div>
+  const renderNotesList = () => {
+    if (notes.length === 0) {
+      return <NotesListEmptyState />;
+    }
+
+    return (
       <InfiniteScrollContainer
         isFetching={isLoading}
         isFetchingNextPage={isFetchingNextPage}
@@ -68,6 +60,25 @@ export const NotesList = ({
           ))}
         </motion.ul>
       </InfiniteScrollContainer>
+    );
+  };
+
+  return (
+    <>
+      <Typography variant="text-1" className={styles.title}>
+        {title}
+      </Typography>
+      <div className={styles.glass}>
+        <Button
+          className={styles.addNoteDesktopButton}
+          leftIcon={<PlusIcon />}
+          onClick={createNote}
+          isLoading={isCreatingNewNote}
+        >
+          {buttonText}
+        </Button>
+      </div>
+      {renderNotesList()}
       <Button
         className={styles.addNoteMobileButton}
         iconOnly
