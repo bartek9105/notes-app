@@ -64,3 +64,7 @@ export const updateNote = async ({
 
   return data;
 };
+
+export const deleteNote = async (id: Note["id"]) => {
+  await supabase.from("notes").delete().eq("id", id);
+};

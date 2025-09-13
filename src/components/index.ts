@@ -10,3 +10,4 @@ export * from "./infinite-scroll-container";
 export * from "./textarea-field";
 export * from "./skeleton";
 export * from "./select-field";
+export * from "./modal";

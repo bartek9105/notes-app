@@ -25,6 +25,7 @@ export const useNoteDetails = () => {
   };
 
   return {
+    noteId: activeNoteId,
     note,
     updateNote,
     isLoadingNote,
