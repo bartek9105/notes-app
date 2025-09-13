@@ -9,17 +9,14 @@ export const AppRoutes = () => {
     <Routes>
       <Route element={<AuthPagesGuard />}>
         <Route path={ROUTES.signUp()} element={<SignUp />} />
-      </Route>
-      <Route element={<AuthPagesGuard />}>
         <Route path={ROUTES.signIn()} element={<SignIn />} />
+        <Route path={ROUTES.forgotPassword()} element={<ForgotPassword />} />
+        <Route path={ROUTES.resetPassword()} element={<ResetPassword />} />
       </Route>
-      {/* <Route element={<AuthPagesGuard />}> */}
-      <Route path={ROUTES.forgotPassword()} element={<ForgotPassword />} />
-      <Route path={ROUTES.resetPassword()} element={<ResetPassword />} />
-      {/* </Route> */}
-      <Route path={ROUTES.notes.root()} element={<MainLayout />}>
-        <Route element={<AuthGuard />}>
-          <Route path={ROUTES.notes.root()} element={<Notes />} />
+
+      <Route element={<AuthGuard />}>
+        <Route path={ROUTES.notes.root()} element={<MainLayout />}>
+          <Route index element={<Notes />} />
           <Route path={ROUTES.notes.details(":id")} element={<Notes />} />
         </Route>
       </Route>

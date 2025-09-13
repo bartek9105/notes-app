@@ -11,3 +11,4 @@ export * from "./textarea-field";
 export * from "./skeleton";
 export * from "./select-field";
 export * from "./modal";
+export * from "./overlay-loader";
