@@ -1,4 +1,10 @@
-import { DeleteNote, NoteDetails, NotesLayout, NotesList } from "@/features";
+import {
+  ArchiveNote,
+  DeleteNote,
+  NoteDetails,
+  NotesLayout,
+  NotesList,
+} from "@/features";
 import { useNavigate, useParams } from "react-router-dom";
 import { ROUTES } from "@/consts";
 import { useTranslation } from "react-i18next";
@@ -22,7 +28,12 @@ export const Notes = () => {
         <NoteDetails onGoBack={() => navigate(ROUTES.notes.root())} />
       }
       isNoteSelected={!!activeNoteId}
-      NoteActions={<DeleteNote />}
+      NoteActions={
+        <>
+          <DeleteNote />
+          <ArchiveNote />
+        </>
+      }
     />
   );
 };
