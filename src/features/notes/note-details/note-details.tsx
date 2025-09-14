@@ -41,11 +41,7 @@ export const NoteDetails = ({ onGoBack }: NoteDetailsProps) => {
   return (
     <div className={styles.container}>
       <div className={styles.topbar}>
-        <NoteDetailsTopbar
-          onGoBack={onGoBack}
-          onArchive={() => {}}
-          disabled={isLoadingNote}
-        />
+        <NoteDetailsTopbar onGoBack={onGoBack} disabled={isLoadingNote} />
       </div>
       {renderContent()}
     </div>

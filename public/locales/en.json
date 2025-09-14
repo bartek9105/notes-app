@@ -28,7 +28,20 @@
         "error": "Something went wrong"
       }
     },
-    "empty-state": "You don’t have any notes yet. Start a new note to capture your thoughts and ideas."
+    "empty-state": "You don’t have any notes yet. Start a new note to capture your thoughts and ideas.",
+    "archive-note-button": "Archive Note",
+    "archive-note-modal": {
+      "title": "Archive Note",
+      "hint": "Are you sure you want to archive this note? You can find it in the Archived Notes section and restore it anytime.",
+      "buttons": {
+        "cancel": "Cancel",
+        "confirm": "Archive Note"
+      },
+      "toasts": {
+        "success": "Note archived successfuly",
+        "error": "Something went wrong"
+      }
+    }
   },
   "auth": {
     "form": {

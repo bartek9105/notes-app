@@ -17,6 +17,7 @@ export const getAllNotes = async ({
   const { data, count } = await supabase
     .from("notes")
     .select("*", { count: "exact" })
+    .eq("isArchived", false)
     .range(from, to)
     .order("created_at", { ascending: false });
 

@@ -40,7 +40,9 @@ $layout-border: 1px solid var(--neutral-200);
 .actions {
   display: none;
   @include desktop-up {
-    display: unset;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
     padding: 20px 16px;
   }
 }
