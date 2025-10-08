@@ -3,23 +3,21 @@ import { BinIcon } from "@/assets";
 import { useDeleteNoteMutation } from "@/api";
 import { toast } from "sonner";
 import { useTranslation } from "react-i18next";
-import { useNavigate } from "react-router-dom";
-import { ROUTES } from "@/consts";
 
 interface DeleteNoteModalProps {
   noteId?: string;
   isOpen: boolean;
   toggle: () => void;
+  onDeleteNote: () => void;
 }
 
 export const DeleteNoteModal = ({
   isOpen,
   toggle,
   noteId,
+  onDeleteNote,
 }: DeleteNoteModalProps) => {
   const { t } = useTranslation();
-
-  const navigate = useNavigate();
 
   const { mutateAsync, isPending } = useDeleteNoteMutation();
 
@@ -29,7 +27,7 @@ export const DeleteNoteModal = ({
     try {
       await mutateAsync(noteId);
       toast.success(t("notes.delete-note-modal.toasts.success"));
-      navigate(ROUTES.notes.root());
+      onDeleteNote();
     } catch {
       toast.error("notes.delete-note-modal.toasts.error");
     } finally {

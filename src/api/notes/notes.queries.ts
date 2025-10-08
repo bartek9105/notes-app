@@ -15,11 +15,13 @@ import { NOTES_QUERY_KEYS } from "./notes.const";
 import { Note } from "@/types";
 import { mapGetAllNotesResponse } from "./notes.utils";
 
-export const useGetAllNotesInfiniteQuery = () => {
+export const useGetAllNotesInfiniteQuery = (
+  isArchived: Note["isArchived"] = false
+) => {
   const { data, ...rest } = useInfiniteQuery({
     initialPageParam: 0,
-    queryKey: [NOTES_QUERY_KEYS.getAllNotes],
-    queryFn: getAllNotes,
+    queryKey: [NOTES_QUERY_KEYS.getAllNotes, isArchived],
+    queryFn: ({ pageParam }) => getAllNotes({ pageParam, isArchived }),
     getNextPageParam: (lastPage) => {
       return lastPage.hasNextPage ? lastPage.nextPage : undefined;
     },

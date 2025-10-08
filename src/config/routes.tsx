@@ -1,6 +1,13 @@
 import { Route, Routes } from "react-router";
 import { ROUTES } from "@/consts";
-import { ForgotPassword, Notes, ResetPassword, SignIn, SignUp } from "@/pages";
+import {
+  ForgotPassword,
+  Notes,
+  ResetPassword,
+  SignIn,
+  SignUp,
+  ArchivedNotes,
+} from "@/pages";
 import { AuthGuard, AuthPagesGuard } from "@/guards";
 import { MainLayout } from "@/layouts";
 
@@ -15,9 +22,20 @@ export const AppRoutes = () => {
       </Route>
 
       <Route element={<AuthGuard />}>
-        <Route path={ROUTES.notes.root()} element={<MainLayout />}>
+        <Route path={ROUTES.notes.allNotes.root()} element={<MainLayout />}>
           <Route index element={<Notes />} />
-          <Route path={ROUTES.notes.details(":id")} element={<Notes />} />
+          <Route
+            path={ROUTES.notes.allNotes.details(":id")}
+            element={<Notes />}
+          />
+        </Route>
+
+        <Route path={ROUTES.notes.archived.root()} element={<MainLayout />}>
+          <Route index element={<ArchivedNotes />} />
+          <Route
+            path={ROUTES.notes.archived.details(":id")}
+            element={<ArchivedNotes />}
+          />
         </Route>
       </Route>
     </Routes>

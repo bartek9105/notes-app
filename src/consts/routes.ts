@@ -1,8 +1,13 @@
 export const ROUTES = {
   notes: {
-    root: () => "/",
-    details: (id: string) => `/${id}`,
-    archived: () => "/archived",
+    allNotes: {
+      root: () => "/",
+      details: (id: string) => `/${id}`,
+    },
+    archived: {
+      root: () => "/archived",
+      details: (id: string) => `/archived/${id}`,
+    },
     tags: () => "/tags",
     search: () => "/search",
   },

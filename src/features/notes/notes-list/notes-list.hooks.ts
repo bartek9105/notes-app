@@ -1,9 +1,14 @@
 import { useCreateNoteMutation, useGetAllNotesInfiniteQuery } from "@/api";
 import { ROUTES } from "@/consts";
+import { Note } from "@/types";
 import { useNavigate, useParams } from "react-router-dom";
 import { toast } from "sonner";
 
-export const useNotesList = () => {
+interface UseNotesListParams {
+  isArchived?: Note["isArchived"];
+}
+
+export const useNotesList = ({ isArchived }: UseNotesListParams) => {
   const navigate = useNavigate();
   const { id: activeNoteId } = useParams();
 
@@ -13,7 +18,7 @@ export const useNotesList = () => {
     isFetchingNextPage,
     fetchNextPage,
     hasNextPage,
-  } = useGetAllNotesInfiniteQuery();
+  } = useGetAllNotesInfiniteQuery(isArchived);
 
   const { mutateAsync: createNoteMutation, isPending: isCreatingNewNote } =
     useCreateNoteMutation();
@@ -22,7 +27,7 @@ export const useNotesList = () => {
     try {
       const response = await createNoteMutation({});
       if (response?.id) {
-        navigate(ROUTES.notes.details(response.id));
+        navigate(ROUTES.notes.allNotes.details(response.id));
       }
     } catch {
       toast.error("Something went wrong when creating note");

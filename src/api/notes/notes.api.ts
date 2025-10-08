@@ -10,6 +10,7 @@ import {
 
 export const getAllNotes = async ({
   pageParam = 0,
+  isArchived = false,
 }): Promise<PaginatedResponse<Note[]>> => {
   const from = pageParam * 20;
   const to = from + 20 - 1;
@@ -17,7 +18,7 @@ export const getAllNotes = async ({
   const { data, count } = await supabase
     .from("notes")
     .select("*", { count: "exact" })
-    .eq("isArchived", false)
+    .eq("isArchived", isArchived)
     .range(from, to)
     .order("created_at", { ascending: false });
 

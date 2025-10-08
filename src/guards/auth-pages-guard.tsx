@@ -11,7 +11,7 @@ export const AuthPagesGuard = () => {
   }
 
   if (session && !isLoading) {
-    return <Navigate to={ROUTES.notes.root()} replace />;
+    return <Navigate to={ROUTES.notes.allNotes.root()} replace />;
   }
   return <Outlet />;
 };

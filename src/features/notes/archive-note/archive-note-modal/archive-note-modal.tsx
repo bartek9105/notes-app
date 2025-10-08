@@ -3,6 +3,8 @@ import { BinIcon } from "@/assets";
 import { useUpdateNoteMutation } from "@/api";
 import { toast } from "sonner";
 import { useTranslation } from "react-i18next";
+import { ROUTES } from "@/consts";
+import { useNavigate } from "react-router-dom";
 
 interface DeleteNoteModalProps {
   noteId?: string;
@@ -16,6 +18,7 @@ export const ArchiveNoteModal = ({
   noteId,
 }: DeleteNoteModalProps) => {
   const { t } = useTranslation();
+  const navigate = useNavigate();
 
   const { mutateAsync: updateNoteMutation, isPending: isUpdatingNote } =
     useUpdateNoteMutation();
@@ -28,8 +31,8 @@ export const ArchiveNoteModal = ({
         id: noteId,
         isArchived: true,
       });
-
       toast.success(t("notes.archive-note-modal.toasts.success"));
+      navigate(ROUTES.notes.allNotes.root());
     } catch {
       toast.error("notes.archive-note-modal.toasts.error");
     } finally {

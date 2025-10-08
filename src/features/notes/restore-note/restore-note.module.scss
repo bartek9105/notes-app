@@ -1,0 +1,18 @@
+@use "@/styles/mixins/responsive.scss" as *;
+
+.buttonMobile {
+  @include desktop-up {
+    display: none;
+  }
+}
+
+.buttonDesktop {
+  display: none;
+  @include desktop-up {
+    display: flex;
+  }
+}
+
+.icon {
+  font-size: 18px;
+}
