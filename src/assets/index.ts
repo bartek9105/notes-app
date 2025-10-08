@@ -14,3 +14,4 @@ export { ReactComponent as TagIcon } from "./tag.svg";
 export { ReactComponent as EyeIcon } from "./eye.svg";
 export { ReactComponent as GoogleIcon } from "./google.svg";
 export { ReactComponent as InfoIcon } from "./info.svg";
+export { ReactComponent as RestoreIcon } from "./restore.svg";

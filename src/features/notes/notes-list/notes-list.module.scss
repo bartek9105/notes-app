@@ -60,3 +60,11 @@
 .list {
   height: 100%;
 }
+
+.archivedNoteHint {
+  color: var(--neutral-700);
+  margin-bottom: 16px;
+  @include desktop-up {
+    margin-top: 20px;
+  }
+}

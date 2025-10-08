@@ -6,7 +6,11 @@ import { BinIcon } from "@/assets";
 import styles from "./delete-note.module.scss";
 import { useTranslation } from "react-i18next";
 
-export const DeleteNote = () => {
+interface DeleteNoteProps {
+  onDeleteNote: () => void;
+}
+
+export const DeleteNote = ({ onDeleteNote }: DeleteNoteProps) => {
   const { t } = useTranslation();
   const { id: activeNoteId } = useParams();
 
@@ -37,6 +41,7 @@ export const DeleteNote = () => {
         noteId={activeNoteId}
         isOpen={isDeleteNoteModalOpen}
         toggle={deleteNoteModalToggle}
+        onDeleteNote={onDeleteNote}
       />
     </>
   );

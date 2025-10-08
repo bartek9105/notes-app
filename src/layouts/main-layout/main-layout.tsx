@@ -16,9 +16,7 @@ export const MainLayout = () => {
         [styles.sidebarOpenLayout]: isSidebarOpen,
       })}
     >
-      {isSidebarOpen && (
-        <Sidebar isOpen={isSidebarOpen} onClose={handleCloseSidebar} />
-      )}
+      <Sidebar isOpen={isSidebarOpen} onClose={handleCloseSidebar} />
       <div className={styles.content}>
         <Topbar
           onOpenMenu={() => setSidebarOpen(!isSidebarOpen)}

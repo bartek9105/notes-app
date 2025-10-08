@@ -5,15 +5,15 @@ import { useScreenSize } from "@/hooks";
 interface NotesLayoutProps {
   NotesList: ReactNode;
   NoteDetails: ReactNode;
-  isNoteSelected: boolean;
   NoteActions: ReactNode;
+  isNoteSelected: boolean;
 }
 
 export function NotesLayout({
   NotesList,
   NoteDetails,
-  isNoteSelected,
   NoteActions,
+  isNoteSelected,
 }: PropsWithChildren<NotesLayoutProps>) {
   const { isDesktop } = useScreenSize();
 
@@ -22,8 +22,8 @@ export function NotesLayout({
   return (
     <div className={styles.container}>
       {shouldRenderNotesList && <div className={styles.list}>{NotesList}</div>}
-      <div className={styles.details}>{NoteDetails}</div>
-      <div className={styles.actions}>{NoteActions}</div>
+      <div className={styles.details}>{isNoteSelected && NoteDetails}</div>
+      {isNoteSelected && <div className={styles.actions}>{NoteActions}</div>}
     </div>
   );
 }

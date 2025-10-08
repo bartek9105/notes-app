@@ -4,19 +4,20 @@ import { Button, InfiniteScrollContainer, Typography } from "@/components";
 import { motion } from "motion/react";
 import { PlusIcon } from "@/assets";
 
-import {
-  itemVariantsAnimation,
-  listVariantsAnimation,
-} from "./notes-list.const";
 import { NotesListProps } from "./notes-list.types";
 import { useNotesList } from "./notes-list.hooks";
 import { NotesListEmptyState } from "./notes-list-empty-state";
+import { LIST_ANIMATION, LIST_ITEM_ANIMATION } from "@/consts";
+import { useTranslation } from "react-i18next";
 
 export const NotesList = ({
   title,
   buttonText,
   onNoteSelect,
+  isArchived = false,
 }: NotesListProps) => {
+  const { t } = useTranslation();
+
   const {
     createNote,
     isCreatingNewNote,
@@ -26,10 +27,12 @@ export const NotesList = ({
     fetchNextPage,
     hasNextPage,
     activeNoteId,
-  } = useNotesList();
+  } = useNotesList({ isArchived });
+
+  const isEmpty = notes.length === 0 && !isLoading;
 
   const renderNotesList = () => {
-    if (notes.length === 0) {
+    if (isEmpty) {
       return <NotesListEmptyState />;
     }
 
@@ -41,7 +44,7 @@ export const NotesList = ({
         onScrollEndCallback={fetchNextPage}
       >
         <motion.ul
-          variants={listVariantsAnimation}
+          variants={LIST_ANIMATION}
           initial="hidden"
           animate="visible"
           className={styles.list}
@@ -51,7 +54,7 @@ export const NotesList = ({
               key={note.id}
               onClick={() => onNoteSelect?.(note.id)}
               className={styles.listItem}
-              variants={itemVariantsAnimation}
+              variants={LIST_ITEM_ANIMATION}
               initial="hidden"
               animate="visible"
             >
@@ -68,24 +71,33 @@ export const NotesList = ({
       <Typography variant="text-1" className={styles.title}>
         {title}
       </Typography>
-      <div className={styles.glass}>
+      {isArchived && (
+        <Typography variant="text-5" className={styles.archivedNoteHint}>
+          {t("notes.archived-note-list-hint")}
+        </Typography>
+      )}
+      {!isArchived && (
+        <div className={styles.glass}>
+          <Button
+            className={styles.addNoteDesktopButton}
+            leftIcon={<PlusIcon />}
+            onClick={createNote}
+            isLoading={isCreatingNewNote}
+          >
+            {buttonText}
+          </Button>
+        </div>
+      )}
+      {renderNotesList()}
+      {!isArchived && (
         <Button
-          className={styles.addNoteDesktopButton}
-          leftIcon={<PlusIcon />}
+          className={styles.addNoteMobileButton}
+          iconOnly
+          icon={<PlusIcon />}
           onClick={createNote}
           isLoading={isCreatingNewNote}
-        >
-          {buttonText}
-        </Button>
-      </div>
-      {renderNotesList()}
-      <Button
-        className={styles.addNoteMobileButton}
-        iconOnly
-        icon={<PlusIcon />}
-        onClick={createNote}
-        isLoading={isCreatingNewNote}
-      />
+        />
+      )}
     </>
   );
 };

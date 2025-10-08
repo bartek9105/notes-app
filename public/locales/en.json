@@ -1,6 +1,7 @@
 {
   "topbar": {
     "title": "All notes",
+    "archived-notes-title": "Archived notes",
     "search": {
       "placeholder": "Search by title, content, or tags"
     }
@@ -29,6 +30,8 @@
       }
     },
     "empty-state": "You don’t have any notes yet. Start a new note to capture your thoughts and ideas.",
+    "archived-notes-title": "Archived notes",
+    "archived-note-list-hint": "All your archived notes are stored here. You can restore or delete them anytime.",
     "archive-note-button": "Archive Note",
     "archive-note-modal": {
       "title": "Archive Note",
@@ -39,6 +42,13 @@
       },
       "toasts": {
         "success": "Note archived successfuly",
+        "error": "Something went wrong"
+      }
+    },
+    "restore-note": {
+      "button": "Restore Note",
+      "toasts": {
+        "success": "Note restored",
         "error": "Something went wrong"
       }
     }
