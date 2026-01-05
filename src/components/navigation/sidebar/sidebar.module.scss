@@ -9,8 +9,8 @@
   left: 0;
   bottom: 0;
   width: 272px;
-  border-right: 1px solid var(--neutral-200);
   background-color: var(--neutral-0);
+  border-right: 1px solid var(--neutral-200);
   z-index: 1000;
   padding: 24px 16px 12px;
 
@@ -28,6 +28,7 @@
 
 .icon {
   font-size: 20px;
+  color: var(--neutral-700);
 }
 
 .link {
@@ -36,7 +37,6 @@
   align-items: center;
   padding: 10px 12px;
   border-radius: 4px;
-  color: var(--neutral-600);
   transition: all 0.2s ease-in-out;
 
   &:hover {
@@ -63,4 +63,5 @@
 
 .closeIcon {
   cursor: pointer;
+  color: var(--neutral-700);
 }

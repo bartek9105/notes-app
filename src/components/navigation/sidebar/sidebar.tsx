@@ -2,9 +2,9 @@ import styles from "./sidebar.module.scss";
 import { NAVIGATION_ITEMS } from "./sidebar.const";
 import { NavLink } from "react-router-dom";
 import cn from "classnames";
-import { Separator, Typography } from "@/components";
+import { AppLogo, Separator, Typography } from "@/components";
 import { AnimatePresence, motion } from "motion/react";
-import { Logo, CloseIcon, ChevronRightIcon } from "@/assets";
+import { CloseIcon, ChevronRightIcon } from "@/assets";
 import {
   LIST_ANIMATION,
   LIST_ITEM_ANIMATION,
@@ -28,7 +28,7 @@ export const Sidebar = ({ isOpen, onClose }: SidebarProps) => {
           {...SLIDE_FROM_LEFT_ANIMATION}
         >
           <div className={styles.topbar}>
-            <Logo />
+            <AppLogo />
             <CloseIcon onClick={onClose} className={styles.closeIcon} />
           </div>
           <motion.ul

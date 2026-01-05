@@ -22,14 +22,12 @@ export const ArchiveNote = () => {
         variant="secondary"
         className={styles.buttonMobile}
         isFlat
-        disabled={false}
       />
       <Button
         onClick={archiveNoteModalToggle}
         leftIcon={<ArchiveIcon />}
         variant="border"
         className={styles.buttonDesktop}
-        disabled={false}
       >
         {t("notes.archive-note-button")}
       </Button>

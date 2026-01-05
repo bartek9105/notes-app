@@ -52,12 +52,12 @@ export const NoteDetailsMeta = ({ note }: NoteDetailsMetaProps) => {
       <NoteDetailsMetaTitleField />
       <div className={styles.meta}>
         <NoteDetailsMetaRow
-          LabelIcon={<TagIcon />}
+          LabelIcon={<TagIcon className={styles.icon} />}
           label={t("notes.tags")}
           MetaValue={renderTagsList()}
         />
         <NoteDetailsMetaRow
-          LabelIcon={<ClockIcon />}
+          LabelIcon={<ClockIcon className={styles.icon} />}
           label={t("notes.last-edited")}
           MetaValue={
             <Typography variant="text-5">

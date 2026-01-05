@@ -12,3 +12,5 @@ export * from "./skeleton";
 export * from "./select-field";
 export * from "./modal";
 export * from "./overlay-loader";
+export * from "./dark-mode-toggle";
+export * from "./logo";
