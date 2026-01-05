@@ -1,7 +1,6 @@
 import { PropsWithChildren } from "react";
 import styles from "./auth-form-layout.module.scss";
-import { Logo } from "@/assets";
-import { Typography } from "@/components";
+import { AppLogo, Typography } from "@/components";
 
 interface AuthFormLayoutProps {
   title: string;
@@ -15,7 +14,7 @@ export const AuthFormLayout = ({
 }: PropsWithChildren<AuthFormLayoutProps>) => {
   return (
     <div className={styles.container}>
-      <Logo />
+      <AppLogo />
       <div className={styles.heading}>
         <Typography variant="text-1" className={styles.title}>
           {title}

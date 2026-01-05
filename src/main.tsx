@@ -3,7 +3,7 @@ import { createRoot } from "react-dom/client";
 import { BrowserRouter } from "react-router";
 import "./index.css";
 import "./config/i18n";
-import { QueryProvider, SessionProvider } from "@/providers";
+import { QueryProvider, SessionProvider, ThemeProvider } from "@/providers";
 import { AppRoutes } from "@/config";
 import { Toaster } from "sonner";
 
@@ -12,7 +12,9 @@ createRoot(document.getElementById("root")!).render(
     <BrowserRouter>
       <QueryProvider>
         <SessionProvider>
-          <AppRoutes />
+          <ThemeProvider>
+            <AppRoutes />
+          </ThemeProvider>
           <Toaster richColors />
         </SessionProvider>
       </QueryProvider>

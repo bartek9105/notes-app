@@ -26,14 +26,12 @@ export const DeleteNote = ({ onDeleteNote }: DeleteNoteProps) => {
         variant="secondary"
         className={styles.buttonMobile}
         isFlat
-        disabled={false}
       />
       <Button
         onClick={deleteNoteModalToggle}
         leftIcon={<BinIcon />}
         variant="border"
         className={styles.buttonDesktop}
-        disabled={false}
       >
         {t("notes.delete-note-button")}
       </Button>

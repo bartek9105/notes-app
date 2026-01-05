@@ -1,4 +1,6 @@
 :root {
+  --bg-white: #ffffff;
+  --color-white: #ffffff;
   --neutral-0: #ffffff;
   --neutral-50: #f5f7fa;
   --neutral-100: #f3f5f8;
@@ -28,4 +30,22 @@
   --bg-glass: rgba(255, 255, 255, 0.65);
 
   --overlay-color: rgba(0, 0, 0, 0.5);
+}
+
+[data-theme="dark"] {
+  --bg-white: #0e121b;
+  --neutral-0: #232530;
+  --neutral-50: #f5f7fa;
+  --neutral-100: #2b303b;
+  --neutral-200: #2b303b;
+  --neutral-300: #525866;
+  --neutral-400: #99a0ae;
+  --neutral-500: #99a0ae;
+  --neutral-600: #e0e4ea;
+  --neutral-700: #cacfd8;
+  --neutral-800: #f3f5f8;
+  --neutral-900: #ffffff;
+  --neutral-950: #ffffff;
+
+  --bg-glass: rgba(35, 37, 48, 0.65);
 }

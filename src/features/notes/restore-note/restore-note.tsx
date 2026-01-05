@@ -38,14 +38,12 @@ export const RestoreNote = () => {
         variant="secondary"
         className={styles.buttonMobile}
         isFlat
-        disabled={false}
       />
       <Button
         onClick={handleRestoreNote}
         leftIcon={<RestoreIcon />}
         variant="border"
         className={styles.buttonDesktop}
-        disabled={false}
       >
         {t("notes.restore-note.button")}
       </Button>

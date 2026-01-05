@@ -1,9 +1,10 @@
 import { NavLink, useLocation } from "react-router-dom";
 import styles from "./topbar.module.scss";
 import { ROUTES } from "@/consts";
-import { Input, Typography } from "@/components";
-import { Logo, HamburgerIcon, SettingsIcon } from "@/assets";
+import { Input, Typography, DarkModeToggle } from "@/components";
+import { HamburgerIcon, SettingsIcon } from "@/assets";
 import { useTranslation } from "react-i18next";
+import { AppLogo } from "@/components";
 
 const getTopbarTitle = (pathname: string) => {
   if (pathname.includes(ROUTES.notes.archived.root())) {
@@ -34,7 +35,7 @@ export const Topbar = ({ onOpenMenu, isSidebarOpen }: TopbarProps) => {
               className={styles.hamburgerIcon}
             />
             <NavLink to={ROUTES.notes.allNotes.root()}>
-              <Logo />
+              <AppLogo />
             </NavLink>
           </>
         )}
@@ -48,8 +49,9 @@ export const Topbar = ({ onOpenMenu, isSidebarOpen }: TopbarProps) => {
           name="search"
           placeholder={t("topbar.search.placeholder")}
         />
+        <DarkModeToggle />
         <NavLink to={ROUTES.settings()}>
-          <SettingsIcon />
+          <SettingsIcon className={styles.settingsIcon} />
         </NavLink>
       </div>
     </div>
