@@ -2,7 +2,7 @@ export const APPEAR_ANIMATION = {
   initial: { opacity: 0 },
   animate: { opacity: 1 },
   exit: { opacity: 0 },
-  transition: { duration: 0.2, ease: "easeOut" },
+  transition: { duration: 0.2, ease: "easeOut" as const },
 };
 
 export const SLIDE_FROM_LEFT_ANIMATION = {

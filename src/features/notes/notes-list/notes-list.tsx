@@ -9,6 +9,10 @@ import { useNotesList } from "./notes-list.hooks";
 import { NotesListEmptyState } from "./notes-list-empty-state";
 import { LIST_ANIMATION, LIST_ITEM_ANIMATION } from "@/consts";
 import { useTranslation } from "react-i18next";
+import { SearchIcon } from "@/assets";
+import { Search } from "@/features";
+import { useState } from "react";
+import { useSearchQuery } from "@/hooks";
 
 export const NotesList = ({
   title,
@@ -17,6 +21,10 @@ export const NotesList = ({
   isArchived = false,
 }: NotesListProps) => {
   const { t } = useTranslation();
+
+  const { searchQuery } = useSearchQuery();
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const isSearchActive = isSearchOpen || !!searchQuery;
 
   const {
     createNote,
@@ -27,13 +35,20 @@ export const NotesList = ({
     fetchNextPage,
     hasNextPage,
     activeNoteId,
-  } = useNotesList({ isArchived });
+  } = useNotesList({ isArchived, query: searchQuery });
 
   const isEmpty = notes.length === 0 && !isLoading;
+  const isSearchEmpty = isEmpty && searchQuery;
 
   const renderNotesList = () => {
+    if (isSearchEmpty) {
+      return (
+        <NotesListEmptyState emptyStateText={t("notes.search-empty-state")} />
+      );
+    }
+
     if (isEmpty) {
-      return <NotesListEmptyState />;
+      return <NotesListEmptyState emptyStateText={t("notes.empty-state")} />;
     }
 
     return (
@@ -66,17 +81,37 @@ export const NotesList = ({
     );
   };
 
+  const renderTopBar = () => {
+    if (isSearchActive) {
+      return (
+        <Search
+          className={styles.search}
+          onGoBack={() => setIsSearchOpen(false)}
+        />
+      );
+    }
+
+    return (
+      <>
+        <Typography variant="text-1" className={styles.title}>
+          {title}
+        </Typography>
+        <SearchIcon
+          className={styles.searchIcon}
+          onClick={() => setIsSearchOpen(true)}
+        />
+      </>
+    );
+  };
+
   return (
     <>
-      <Typography variant="text-1" className={styles.title}>
-        {title}
-      </Typography>
-      {isArchived && (
+      <div className={styles.topbar}>{renderTopBar()}</div>
+      {isArchived ? (
         <Typography variant="text-5" className={styles.archivedNoteHint}>
           {t("notes.archived-note-list-hint")}
         </Typography>
-      )}
-      {!isArchived && (
+      ) : (
         <div className={styles.glass}>
           <Button
             className={styles.addNoteDesktopButton}

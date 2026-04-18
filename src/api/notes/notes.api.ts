@@ -11,6 +11,7 @@ import {
 export const getAllNotes = async ({
   pageParam = 0,
   isArchived = false,
+  query = "",
 }): Promise<PaginatedResponse<Note[]>> => {
   const from = pageParam * 20;
   const to = from + 20 - 1;
@@ -20,7 +21,8 @@ export const getAllNotes = async ({
     .select("*", { count: "exact" })
     .eq("isArchived", isArchived)
     .range(from, to)
-    .order("created_at", { ascending: false });
+    .order("created_at", { ascending: false })
+    .or(`title.ilike.%${query}%,description.ilike.%${query}%`);
 
   return {
     data: data ?? [],

@@ -3,6 +3,6 @@ export const SCALE_ANIMATION = {
   animate: { scale: 2 },
   transition: {
     duration: 0.4,
-    ease: "easeOut",
+    ease: "easeOut" as const,
   },
 };
