@@ -6,9 +6,10 @@ import { toast } from "sonner";
 
 interface UseNotesListParams {
   isArchived?: Note["isArchived"];
+  query?: string;
 }
 
-export const useNotesList = ({ isArchived }: UseNotesListParams) => {
+export const useNotesList = ({ isArchived, query }: UseNotesListParams) => {
   const navigate = useNavigate();
   const { id: activeNoteId } = useParams();
 
@@ -18,7 +19,7 @@ export const useNotesList = ({ isArchived }: UseNotesListParams) => {
     isFetchingNextPage,
     fetchNextPage,
     hasNextPage,
-  } = useGetAllNotesInfiniteQuery(isArchived);
+  } = useGetAllNotesInfiniteQuery(isArchived, query);
 
   const { mutateAsync: createNoteMutation, isPending: isCreatingNewNote } =
     useCreateNoteMutation();
