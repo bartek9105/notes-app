@@ -1,0 +1,32 @@
+src/components/overlay-loader/overlay-loader.const.ts
+  9e28a815ce7248aa 6
+.gitignore
+  h_1509f411c28ee9 9
+src/consts/animations.ts
+  9e28a815ce7248aa 5
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.3.0",
+  "base_commit_sha": "411ab1066dc8851128614394de5ead2e31b0b06a",
+  "prompts": {
+    "9e28a815ce7248aa": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "8b1cd1ef-f269-4544-b60c-db8b1a90aba3",
+        "model": "composer-2-fast"
+      },
+      "human_author": "Bartłomiej Matoga",
+      "messages": [],
+      "total_additions": 2,
+      "total_deletions": 2,
+      "accepted_lines": 2,
+      "overriden_lines": 0
+    }
+  },
+  "humans": {
+    "h_1509f411c28ee9": {
+      "author": "Bartłomiej Matoga"
+    }
+  }
+}
