@@ -15,5 +15,11 @@ export const ROUTES = {
   signIn: () => "/sign-in",
   forgotPassword: () => "/forgot-password",
   resetPassword: () => "/reset-password",
-  settings: () => "/settings",
+  settings: {
+    root: () => "/settings",
+    colorTheme: () => "/settings/color-theme",
+    fontTheme: () => "/settings/font-theme",
+    changePassword: () => "/settings/change-password",
+    logout: () => "/settings/logout",
+  },
 };

@@ -4,3 +4,4 @@ export * from "./sign-in";
 export * from "./sign-up";
 export * from "./notes";
 export * from "./archived-notes";
+export * from "./settings";

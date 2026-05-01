@@ -8,7 +8,7 @@ export const signInWithGoogle = async () => {
 };
 
 export const signInWithPassword = async (
-  payload: SignInWithPasswordPayload
+  payload: SignInWithPasswordPayload,
 ) => {
   await supabase.auth.signInWithPassword(payload);
 };

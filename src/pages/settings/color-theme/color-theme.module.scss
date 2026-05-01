@@ -1,0 +1,73 @@
+.themes {
+  display: grid;
+  row-gap: 16px;
+  border: none;
+  padding: 0;
+}
+
+.theme {
+  display: flex;
+  align-items: center;
+  column-gap: 16px;
+  padding: 16px;
+  border-radius: 12px;
+  border: 1px solid var(--neutral-200);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.themeActive {
+  background-color: var(--neutral-100);
+}
+
+.themeBody {
+  display: grid;
+  row-gap: 6px;
+  flex: 1;
+}
+
+.themeIcon {
+  border-radius: 12px;
+  border: 1px solid var(--neutral-200);
+  background-color: var(--bg-white);
+  color: var(--neutral-950);
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+}
+
+.themeTitle {
+  color: var(--neutral-950);
+}
+
+.themeHint {
+  color: var(--neutral-700);
+}
+
+.radio {
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  margin: 0;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  border-radius: 50%;
+  border: 2px solid var(--neutral-300);
+  background-color: var(--neutral-0);
+
+  &:checked {
+    border-width: 4px;
+    border-color: var(--blue-500);
+    background-color: var(--color-white);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--blue-500);
+    outline-offset: 2px;
+  }
+}

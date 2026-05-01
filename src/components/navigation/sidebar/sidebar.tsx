@@ -1,15 +1,10 @@
 import styles from "./sidebar.module.scss";
 import { NAVIGATION_ITEMS } from "./sidebar.const";
-import { NavLink } from "react-router-dom";
-import cn from "classnames";
-import { AppLogo, Separator, Typography } from "@/components";
+import { AppLogo, Separator } from "@/components";
 import { AnimatePresence, motion } from "motion/react";
-import { CloseIcon, ChevronRightIcon } from "@/assets";
-import {
-  LIST_ANIMATION,
-  LIST_ITEM_ANIMATION,
-  SLIDE_FROM_LEFT_ANIMATION,
-} from "@/consts";
+import { CloseIcon } from "@/assets";
+import { SLIDE_FROM_LEFT_ANIMATION } from "@/consts";
+import { SidebarMenu } from "../sidebar-menu/sidebar-menu";
 
 interface SidebarProps {
   isOpen: boolean;
@@ -31,39 +26,7 @@ export const Sidebar = ({ isOpen, onClose }: SidebarProps) => {
             <AppLogo />
             <CloseIcon onClick={onClose} className={styles.closeIcon} />
           </div>
-          <motion.ul
-            className={styles.list}
-            variants={LIST_ANIMATION}
-            initial="hidden"
-            animate="visible"
-          >
-            {NAVIGATION_ITEMS.map((item) => (
-              <motion.li
-                key={item.id}
-                variants={LIST_ITEM_ANIMATION}
-                initial="hidden"
-                animate="visible"
-              >
-                <NavLink to={item.route} onClick={onClose}>
-                  {({ isActive }) => (
-                    <div
-                      className={cn(styles.link, {
-                        [styles.linkActive]: isActive,
-                      })}
-                    >
-                      <div className={styles.linkLeftContent}>
-                        <item.icon className={styles.icon} />
-                        <Typography variant="text-4" className={styles.label}>
-                          {item.label}
-                        </Typography>
-                      </div>
-                      {isActive && <ChevronRightIcon />}
-                    </div>
-                  )}
-                </NavLink>
-              </motion.li>
-            ))}
-          </motion.ul>
+          <SidebarMenu items={NAVIGATION_ITEMS} onClose={onClose} />
           <Separator />
         </motion.div>
       )}

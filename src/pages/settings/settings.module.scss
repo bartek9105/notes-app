@@ -1,0 +1,43 @@
+@use "@/styles/mixins/responsive.scss" as *;
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr;
+  min-height: 100%;
+
+  @include desktop-up {
+    grid-template-columns: 258px 1fr;
+  }
+}
+
+.sidebar {
+  padding: 24px 16px;
+  display: grid;
+  row-gap: 16px;
+  align-content: start;
+
+  @include desktop-up {
+    padding: 20px 16px 0 32px;
+    border-right: 1px solid var(--neutral-200);
+  }
+}
+
+.content {
+  min-width: 0;
+  max-width: 800px;
+  border-radius: 12px 12px 0 0;
+}
+
+.hiddenOnMobile {
+  display: none;
+
+  @include desktop-up {
+    display: grid;
+  }
+}
+
+.sidebarHeader {
+  @include desktop-up {
+    display: none;
+  }
+}
