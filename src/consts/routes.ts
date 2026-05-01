@@ -18,8 +18,6 @@ export const ROUTES = {
   settings: {
     root: () => "/settings",
     colorTheme: () => "/settings/color-theme",
-    fontTheme: () => "/settings/font-theme",
     changePassword: () => "/settings/change-password",
-    logout: () => "/settings/logout",
   },
 };

@@ -49,12 +49,10 @@ export const AppRoutes = () => {
               path={ROUTES.settings.colorTheme()}
               element={<ColorTheme />}
             />
-            <Route path={ROUTES.settings.fontTheme()} element={null} />
             <Route
               path={ROUTES.settings.changePassword()}
               element={<ChangePassword />}
             />
-            <Route path={ROUTES.settings.logout()} element={null} />
           </Route>
         </Route>
       </Route>

@@ -11,13 +11,13 @@ const SETTINGS_ITEMS = [
     id: "color-theme",
     route: ROUTES.settings.colorTheme(),
     icon: SunIcon,
-    label: "Color Theme",
+    labelKey: "settings.sidebar.color-theme",
   },
   {
     id: "change-password",
     route: ROUTES.settings.changePassword(),
     icon: LockIcon,
-    label: "Change Password",
+    labelKey: "settings.sidebar.change-password",
   },
 ];
 
@@ -38,7 +38,12 @@ export const Settings = () => {
         <Typography variant="text-1" className={styles.sidebarHeader}>
           {t("settings.title")}
         </Typography>
-        <SidebarMenu items={SETTINGS_ITEMS} />
+        <SidebarMenu
+          items={SETTINGS_ITEMS.map((item) => ({
+            ...item,
+            label: t(item.labelKey),
+          }))}
+        />
       </aside>
       <section
         className={cn(styles.content, {

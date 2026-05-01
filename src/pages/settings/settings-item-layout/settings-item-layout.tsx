@@ -25,7 +25,7 @@ export const SettingOptionLayout = ({
         onGoBack={() => navigate(ROUTES.settings.root())}
         className={styles.goBackButton}
       >
-        {t("settings.goBackButton")}
+        {t("settings.go-back-button")}
       </GoBackButton>
       <div className={styles.text}>
         <Typography variant="text-1">{title}</Typography>

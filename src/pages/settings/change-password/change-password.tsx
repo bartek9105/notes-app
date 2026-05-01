@@ -34,6 +34,15 @@ export const ChangePassword = () => {
     isPending: isChangePasswordPending,
   } = useChangePasswordMutation();
 
+  const onSubmit = async ({ password }: ChangePasswordFormDataType) => {
+    try {
+      await changePasswordMutation({ password });
+      toast.success(t("settings.change-password.toasts.success"));
+    } catch {
+      toast.error(t("settings.change-password.toasts.error"));
+    }
+  };
+
   const content = () => {
     if (isMeLoading) {
       return <Spinner />;
@@ -56,7 +65,7 @@ export const ChangePassword = () => {
         />
         <Field
           name="confirmPassword"
-          label={t("settings.change-password.form.confirmPassword.label")}
+          label={t("settings.change-password.form.confirm-password.label")}
           type="password"
         />
         <div className={styles.submitButtonContainer}>
@@ -71,15 +80,6 @@ export const ChangePassword = () => {
         </div>
       </BaseForm>
     );
-  };
-
-  const onSubmit = async ({ password }: ChangePasswordFormDataType) => {
-    try {
-      await changePasswordMutation({ password });
-      toast.success(t("settings.change-password.toasts.success"));
-    } catch {
-      toast.error(t("settings.change-password.toasts.error"));
-    }
   };
 
   return (
