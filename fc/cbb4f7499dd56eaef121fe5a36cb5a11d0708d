@@ -1,0 +1,152 @@
+src/api/auth/sign-in/sign-in.types.ts
+  h_1509f411c28ee9 1-4
+src/pages/index.ts
+  h_1509f411c28ee9 7
+src/assets/system.svg
+  h_1509f411c28ee9 1-6
+src/api/auth/sign-out/sign-out.api.ts
+  h_1509f411c28ee9 1-5
+src/components/navigation/index.ts
+  h_1509f411c28ee9 3
+public/locales/en.json
+  h_1509f411c28ee9 5,8-9,100-137
+src/providers/theme-provider/theme.provider.tsx
+  h_1509f411c28ee9 9
+src/components/button/button.module.scss
+  h_1509f411c28ee9 79
+src/features/auth/components/auth-form/auth-form.validations.ts
+  h_1509f411c28ee9 1,6
+src/pages/settings/color-theme/color-theme.module.scss
+  058a88f5cd66e166 49-52,55-60,62-63,65-73
+  h_1509f411c28ee9 1-48,53-54,61,64
+src/assets/moon.svg
+  h_1509f411c28ee9 1-4
+src/components/navigation/sidebar-menu/sidebar-menu.module.scss
+  h_1509f411c28ee9 1-34
+src/utils/validation.ts
+  h_1509f411c28ee9 1-8
+src/pages/settings/change-password/change-password.tsx
+  h_1509f411c28ee9 1-90
+src/pages/settings/change-password/change-password.const.ts
+  h_1509f411c28ee9 1-4
+src/pages/settings/change-password/change-password.module.scss
+  h_1509f411c28ee9 1-13
+src/components/navigation/topbar/topbar.tsx
+  h_1509f411c28ee9 1,4-5,9,18-20,32-39,61-62,64-70
+src/components/navigation/sidebar/sidebar.tsx
+  h_1509f411c28ee9 3,7,29
+src/components/index.ts
+  h_1509f411c28ee9 16
+src/api/auth/change-password/change-password.api.ts
+  h_1509f411c28ee9 2,4-6,9-11
+src/components/navigation/sidebar-menu/index.ts
+  h_1509f411c28ee9 1
+src/api/auth/sign-up/sign-up.api.ts
+  h_1509f411c28ee9 1-11
+src/pages/settings/change-password/index.ts
+  h_1509f411c28ee9 1
+src/features/auth/components/sign-up-form/sign-up-form.hooks.ts
+  h_1509f411c28ee9 3,12-14,16
+src/assets/sun.svg
+  h_1509f411c28ee9 1-4
+src/providers/theme-provider/theme.types.ts
+  h_1509f411c28ee9 1,5
+src/components/go-back-button/go-back-button.module.scss
+  h_1509f411c28ee9 1-8
+src/api/auth/sign-out/index.ts
+  h_1509f411c28ee9 1
+src/pages/settings/settings-item-layout/index.ts
+  h_1509f411c28ee9 1
+src/pages/settings/settings-item-layout/settings-item-layout.tsx
+  h_1509f411c28ee9 1-41
+src/utils/index.ts
+  h_1509f411c28ee9 4
+package.json
+  h_1509f411c28ee9 15
+src/pages/settings/change-password/change-password.validations.ts
+  058a88f5cd66e166 9-13,17
+  h_1509f411c28ee9 1-8,14-16,18-19
+src/api/index.ts
+  h_1509f411c28ee9 1
+src/assets/font.svg
+  h_1509f411c28ee9 1-4
+src/index.css
+  h_1509f411c28ee9 36
+src/pages/settings/settings-index-redirect.tsx
+  h_1509f411c28ee9 2
+  058a88f5cd66e166 1,3-14
+src/pages/settings/color-theme/color-theme.tsx
+  h_1509f411c28ee9 1-51,53-64
+  058a88f5cd66e166 52
+src/assets/logout.svg
+  h_1509f411c28ee9 1-4
+src/pages/settings/change-password/change-password.types.ts
+  058a88f5cd66e166 1,4-5
+  h_1509f411c28ee9 2-3,6
+src/pages/settings/settings-item-layout/settings-item-layout.module.scss
+  h_1509f411c28ee9 1-31
+src/components/go-back-button/index.ts
+  h_1509f411c28ee9 1
+src/components/button/button.tsx
+  h_1509f411c28ee9 27
+src/config/routes.tsx
+  058a88f5cd66e166 11,46-54,56-58
+  h_1509f411c28ee9 10,12-13,44-45,55,59
+src/api/auth/index.ts
+  h_1509f411c28ee9 1-6
+src/pages/settings/color-theme/index.ts
+  h_1509f411c28ee9 1
+src/features/notes/note-details/note-details-topbar/note-details-topbar.tsx
+  h_1509f411c28ee9 7,27
+src/components/navigation/sidebar-menu/sidebar-menu.tsx
+  h_1509f411c28ee9 1-55
+src/pages/settings/index.ts
+  058a88f5cd66e166 2
+  h_1509f411c28ee9 1,3-4
+src/components/go-back-button/go-back-button.tsx
+  h_1509f411c28ee9 1-28
+src/api/auth/sign-out/sign-out.mutations.ts
+  h_1509f411c28ee9 1-8
+src/pages/settings/settings.module.scss
+  h_1509f411c28ee9 1-3,7-9,14-16,18-20,27-28,34,36-43
+  058a88f5cd66e166 4-6,10-13,17,21-26,29-33,35
+src/consts/routes.ts
+  h_1509f411c28ee9 18-24
+src/pages/settings/settings.tsx
+  058a88f5cd66e166 4-5,27,29-30,33-37,40-49
+  h_1509f411c28ee9 1-3,6-26,28,31-32,38-39,50-52
+src/api/auth/change-password/change-password.mutations.ts
+  h_1509f411c28ee9 1-9
+src/components/navigation/topbar/topbar.module.scss
+  h_1509f411c28ee9 36
+src/assets/index.ts
+  h_1509f411c28ee9 19-24
+src/api/auth/change-password/change-password.types.ts
+  h_1509f411c28ee9 1-3
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.3.2",
+  "base_commit_sha": "fccbb4f7499dd56eaef121fe5a36cb5a11d0708d",
+  "prompts": {
+    "058a88f5cd66e166": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "9f1fec22-6492-4ef3-8f3c-6acd623b002e",
+        "model": "composer-2"
+      },
+      "human_author": "Bartłomiej Matoga",
+      "messages": [],
+      "total_additions": 155,
+      "total_deletions": 30,
+      "accepted_lines": 99,
+      "overriden_lines": 23,
+      "messages_url": "https://gitai.miquido.dev/cas/1b2cd92481c95f497be4dbc18700e8836056b4ac05c3e5c6e292a5ebd9446f36"
+    }
+  },
+  "humans": {
+    "h_1509f411c28ee9": {
+      "author": "Bartłomiej Matoga"
+    }
+  }
+}
