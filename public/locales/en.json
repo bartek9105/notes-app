@@ -2,9 +2,11 @@
   "topbar": {
     "title": "All notes",
     "archived-notes-title": "Archived notes",
+    "settings-title": "Settings",
     "search": {
       "placeholder": "Search by title, content, or tags"
-    }
+    },
+    "logout": "Logout"
   },
   "notes": {
     "title": "All notes",
@@ -90,10 +92,56 @@
         "submit": "Sign up",
         "hint": "Already have an account?",
         "link": "Login"
+      },
+      "toasts": {
+        "success": "Account created successfuly. Check your email for verification.",
+        "error": "Something went wrong when creating account"
       }
     },
     "google": {
       "hint": "Or log in with:"
+    }
+  },
+  "settings": {
+    "title": "Settings",
+    "sidebar": {
+      "color-theme": "Color Theme",
+      "change-password": "Change Password"
+    },
+    "go-back-button": "Settings",
+    "color-theme": {
+      "title": "Color Theme",
+      "hint": "Choose your color theme:",
+      "themes": {
+        "light": {
+          "label": "Light Mode",
+          "description": "Pick a clean and classic light theme"
+        },
+        "dark": {
+          "label": "Dark Mode",
+          "description": "Select a sleek and modern dark theme"
+        }
+      }
+    },
+    "change-password": {
+      "title": "Change Password",
+      "hint": "Change password is not available for Google authenticated users.",
+      "form": {
+        "password": {
+          "label": "New Password"
+        },
+        "confirm-password": {
+          "label": "Confirm Password",
+          "validation": {
+            "match": "Passwords must match"
+          }
+        },
+        "submit": "Change password"
+      },
+      "toasts": {
+        "success": "Password changed successfuly",
+        "error": "Something went wrong"
+      }
     }
   }
 }

@@ -15,5 +15,9 @@ export const ROUTES = {
   signIn: () => "/sign-in",
   forgotPassword: () => "/forgot-password",
   resetPassword: () => "/reset-password",
-  settings: () => "/settings",
+  settings: {
+    root: () => "/settings",
+    colorTheme: () => "/settings/color-theme",
+    changePassword: () => "/settings/change-password",
+  },
 };

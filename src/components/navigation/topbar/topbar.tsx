@@ -1,11 +1,12 @@
-import { NavLink, useLocation } from "react-router-dom";
+import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import styles from "./topbar.module.scss";
 import { ROUTES } from "@/consts";
-import { Typography, DarkModeToggle } from "@/components";
-import { HamburgerIcon, SettingsIcon } from "@/assets";
+import { Button, Typography } from "@/components";
+import { HamburgerIcon, SettingsIcon, LogoutIcon } from "@/assets";
 import { useTranslation } from "react-i18next";
 import { AppLogo } from "@/components";
 import { Search } from "@/features";
+import { useSignOutMutation } from "@/api";
 
 const getTopbarTitle = (pathname: string) => {
   if (pathname.includes(ROUTES.notes.archived.root())) {
@@ -13,6 +14,9 @@ const getTopbarTitle = (pathname: string) => {
   }
   if (pathname.includes(ROUTES.notes.allNotes.root())) {
     return "topbar.title";
+  }
+  if (pathname.includes(ROUTES.settings.root())) {
+    return "topbar.settings-title";
   }
   return "topbar.title";
 };
@@ -25,6 +29,14 @@ interface TopbarProps {
 export const Topbar = ({ onOpenMenu, isSidebarOpen }: TopbarProps) => {
   const { t } = useTranslation();
   const { pathname } = useLocation();
+  const navigate = useNavigate();
+
+  const { mutateAsync: signOutMutation } = useSignOutMutation();
+
+  const handleSignOut = async () => {
+    await signOutMutation();
+    navigate(ROUTES.signIn());
+  };
 
   return (
     <div className={styles.container}>
@@ -45,11 +57,17 @@ export const Topbar = ({ onOpenMenu, isSidebarOpen }: TopbarProps) => {
         </Typography>
       </div>
       <div className={styles.rightSide}>
-        <Search className={styles.search}/>
-        <DarkModeToggle />
-        <NavLink to={ROUTES.settings()}>
-          <SettingsIcon className={styles.settingsIcon} />
+        <Search className={styles.search} />
+        <NavLink to={ROUTES.settings.root()}>
+          <Button iconOnly icon={<SettingsIcon />} isFlat variant="secondary" />
         </NavLink>
+        <Button
+          iconOnly
+          icon={<LogoutIcon />}
+          onClick={handleSignOut}
+          isFlat
+          variant="secondary"
+        />
       </div>
     </div>
   );

@@ -7,6 +7,10 @@ import {
   SignIn,
   SignUp,
   ArchivedNotes,
+  Settings,
+  SettingsIndexRedirect,
+  ColorTheme,
+  ChangePassword,
 } from "@/pages";
 import { AuthGuard, AuthPagesGuard } from "@/guards";
 import { MainLayout } from "@/layouts";
@@ -36,6 +40,20 @@ export const AppRoutes = () => {
             path={ROUTES.notes.archived.details(":id")}
             element={<ArchivedNotes />}
           />
+        </Route>
+
+        <Route path={ROUTES.settings.root()} element={<MainLayout />}>
+          <Route element={<Settings />}>
+            <Route index element={<SettingsIndexRedirect />} />
+            <Route
+              path={ROUTES.settings.colorTheme()}
+              element={<ColorTheme />}
+            />
+            <Route
+              path={ROUTES.settings.changePassword()}
+              element={<ChangePassword />}
+            />
+          </Route>
         </Route>
       </Route>
     </Routes>

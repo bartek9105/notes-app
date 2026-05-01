@@ -24,7 +24,7 @@ export const Button = ({
           [styles.iconOnly]: iconOnly,
           [styles.isFlat]: isFlat,
         },
-        className
+        className,
       )}
       {...rest}
     >

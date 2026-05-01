@@ -1,6 +1,6 @@
-export type Theme = "light" | "dark";
+export type Theme = "light" | "dark" | "system";
 
 export type ThemeContextType = {
   theme: Theme;
-  handleSetTheme: () => void;
+  handleSetTheme: (theme: Theme) => void;
 };

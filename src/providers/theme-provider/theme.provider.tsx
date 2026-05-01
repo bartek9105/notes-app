@@ -6,7 +6,7 @@ const LOCAL_STORAGE_THEME_KEY = "theme";
 
 export const ThemeProvider = ({ children }: PropsWithChildren) => {
   const [theme, setTheme] = useState<Theme>(
-    () => (localStorage.getItem(LOCAL_STORAGE_THEME_KEY) as Theme) || "light"
+    () => (localStorage.getItem(LOCAL_STORAGE_THEME_KEY) as Theme) || "light",
   );
 
   useEffect(() => {

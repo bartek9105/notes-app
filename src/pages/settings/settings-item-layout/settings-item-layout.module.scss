@@ -1,0 +1,31 @@
+@use "@/styles/mixins/responsive.scss" as *;
+
+.container {
+  padding: 24px 16px;
+  display: grid;
+
+  @include tablet-up {
+    padding: 24px 32px;
+  }
+}
+
+.goBackButton {
+  margin-bottom: 12px;
+
+  @include desktop-up {
+    display: none;
+  }
+}
+
+.text {
+  display: grid;
+  row-gap: 8px;
+  margin-bottom: 20px;
+  @include desktop-up {
+    margin-bottom: 32px;
+  }
+}
+
+.hint {
+  color: var(--neutral-700);
+}
