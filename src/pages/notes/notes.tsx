@@ -27,11 +27,7 @@ export const Notes = () => {
         />
       }
       NoteDetails={
-        <NoteDetails
-          onGoBack={rootNavigate}
-          onDeleteNote={rootNavigate}
-          isNoteSelected={!!activeNoteId}
-        />
+        <NoteDetails onGoBack={rootNavigate} onDeleteNote={rootNavigate} />
       }
       isNoteSelected={!!activeNoteId}
       NoteActions={

@@ -13,19 +13,18 @@ export interface NoteDetailsProps {
   onGoBack: () => void;
   isArchived?: Note["isArchived"];
   onDeleteNote: () => void;
-  isNoteSelected: boolean;
 }
 
 export const NoteDetails = ({
-  isNoteSelected,
   isArchived = false,
   onGoBack,
   onDeleteNote,
 }: NoteDetailsProps) => {
-  const { note, isLoadingNote, updateNote, isUpdatingNote } = useNoteDetails();
+  const { note, isLoadingNote, updateNote, isUpdatingNote, noteId } =
+    useNoteDetails();
 
   const renderContent = () => {
-    if (!isNoteSelected) {
+    if (!noteId) {
       return <NoteDetailsEmptyState />;
     }
 
