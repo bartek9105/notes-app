@@ -1,0 +1,34 @@
+src/features/notes/notes-layout/notes-layout.tsx
+  h_1509f411c28ee9 4,27,29
+public/locales/en.json
+  h_1509f411c28ee9 34
+src/pages/archived-notes/archived-notes.tsx
+  h_1509f411c28ee9 35
+src/features/notes/note-details/note-details-empty-state/index.ts
+  h_1509f411c28ee9 1
+src/features/notes/note-details/note-details.tsx
+  h_1509f411c28ee9 10,16,20,28-31
+src/assets/logo-feather.svg
+  h_1509f411c28ee9 1-11
+src/pages/notes/notes.tsx
+  h_1509f411c28ee9 33
+src/assets/index.ts
+  h_1509f411c28ee9 11
+src/features/notes/note-details/note-details-empty-state/note-details-empty-state.tsx
+  h_1509f411c28ee9 1-19
+src/features/notes/note-details/note-details-empty-state/note-details-empty-state.module.scss
+  h_1509f411c28ee9 1-17
+src/features/notes/notes-layout/notes-layout.module.scss
+  h_1509f411c28ee9 40-41
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.3.2",
+  "base_commit_sha": "2f282d92505be91b10e93aec925370efeb951484",
+  "prompts": {},
+  "humans": {
+    "h_1509f411c28ee9": {
+      "author": "Bartłomiej Matoga"
+    }
+  }
+}
