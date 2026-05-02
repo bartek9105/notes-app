@@ -3,13 +3,14 @@ import styles from "./note-details-meta.module.scss";
 import cn from "classnames";
 import { formatDate } from "@/utils";
 import { Note } from "@/types";
-import { TagIcon, ClockIcon } from "@/assets";
+import { TagIcon, ClockIcon, FontIcon, PulseCircleIcon } from "@/assets";
 import { ReactNode } from "react";
 import { useTranslation } from "react-i18next";
 import { NoteDetailsMetaTitleField } from "./note-details-meta-title-field";
 
 interface NoteDetailsMetaProps {
   note: Note;
+  wordsCount: number;
 }
 
 interface NoteDetailsMetaRowProps {
@@ -34,7 +35,7 @@ const NoteDetailsMetaRow = ({
   );
 };
 
-export const NoteDetailsMeta = ({ note }: NoteDetailsMetaProps) => {
+export const NoteDetailsMeta = ({ note, wordsCount }: NoteDetailsMetaProps) => {
   const { t } = useTranslation();
 
   const renderTagsList = () => {
@@ -63,6 +64,16 @@ export const NoteDetailsMeta = ({ note }: NoteDetailsMetaProps) => {
             <Typography variant="text-5">
               {formatDate(note.created_at)}
             </Typography>
+          }
+        />
+        <NoteDetailsMetaRow
+          LabelIcon={<FontIcon className={styles.icon} />}
+          label={t("notes.words-count")}
+          MetaValue={
+            <>
+              <Typography variant="text-5">{wordsCount}</Typography>
+              <PulseCircleIcon className={styles.pulseCircleIcon} />
+            </>
           }
         />
       </div>

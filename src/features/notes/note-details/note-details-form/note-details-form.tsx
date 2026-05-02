@@ -8,6 +8,7 @@ import {
 import { CreateNotePayload, Note } from "@/types";
 import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
+import { useDebounce } from "use-debounce";
 import { NoteDetailsMeta } from "../note-details-meta";
 import styles from "./note-details-form.module.scss";
 import { NOTE_DETAILS_FORM_DEFAULT_VALUES } from "./note-details-form.const";
@@ -37,7 +38,7 @@ export const NoteDetailsForm = ({
       sanitizeFormReset({
         defaultValues: NOTE_DETAILS_FORM_DEFAULT_VALUES,
         resetValues: note,
-      })
+      }),
     );
   };
 
@@ -52,6 +53,11 @@ export const NoteDetailsForm = ({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [note]);
 
+  const { description } = formParams.watch();
+
+  const [debouncedDescription] = useDebounce(description, 300);
+  const wordsCount = debouncedDescription?.match(/\S+/g)?.length ?? 0;
+
   return (
     <div className={styles.container}>
       <BaseForm
@@ -60,7 +66,7 @@ export const NoteDetailsForm = ({
         className={styles.form}
         id="note-details-form"
       >
-        <NoteDetailsMeta note={note} />
+        <NoteDetailsMeta note={note} wordsCount={wordsCount} />
         <TextareaField
           name="description"
           placeholder={t("notes.note-description-empty-state")}
