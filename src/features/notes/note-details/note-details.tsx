@@ -7,6 +7,7 @@ import { AnimatePresence, motion } from "motion/react";
 import { APPEAR_ANIMATION } from "@/consts";
 import { useNoteDetails } from "./note-details.hooks";
 import { Note } from "@/types";
+import { NoteDetailsEmptyState } from "./note-details-empty-state";
 
 export interface NoteDetailsProps {
   onGoBack: () => void;
@@ -19,9 +20,14 @@ export const NoteDetails = ({
   onGoBack,
   onDeleteNote,
 }: NoteDetailsProps) => {
-  const { note, isLoadingNote, updateNote, isUpdatingNote } = useNoteDetails();
+  const { note, isLoadingNote, updateNote, isUpdatingNote, noteId } =
+    useNoteDetails();
 
   const renderContent = () => {
+    if (!noteId) {
+      return <NoteDetailsEmptyState />;
+    }
+
     if (isLoadingNote || !note) {
       return (
         <div className={styles.skeleton}>

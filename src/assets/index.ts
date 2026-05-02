@@ -8,6 +8,7 @@ export { ReactComponent as HamburgerIcon } from "./hamburger.svg";
 export { ReactComponent as HomeIcon } from "./home.svg";
 export { ReactComponent as Logo } from "./logo.svg";
 export { ReactComponent as LogoDarkMode } from "./logo-dark-mode.svg";
+export { ReactComponent as LogoFeather } from "./logo-feather.svg";
 export { ReactComponent as PlusIcon } from "./plus.svg";
 export { ReactComponent as SearchIcon } from "./search.svg";
 export { ReactComponent as SettingsIcon } from "./settings.svg";

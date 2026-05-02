@@ -1,6 +1,7 @@
 import { PropsWithChildren, ReactNode } from "react";
 import styles from "./notes-layout.module.scss";
 import { useScreenSize } from "@/hooks";
+import cn from "classnames";
 
 interface NotesLayoutProps {
   NotesList: ReactNode;
@@ -22,7 +23,11 @@ export function NotesLayout({
   return (
     <div className={styles.container}>
       {shouldRenderNotesList && <div className={styles.list}>{NotesList}</div>}
-      <div className={styles.details}>{isNoteSelected && NoteDetails}</div>
+      <div
+        className={cn(styles.details, isNoteSelected && styles.detailsBorder)}
+      >
+        {NoteDetails}
+      </div>
       {isNoteSelected && <div className={styles.actions}>{NoteActions}</div>}
     </div>
   );
