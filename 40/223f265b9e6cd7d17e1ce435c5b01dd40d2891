@@ -1,0 +1,43 @@
+src/assets/logo-feather-animated.svg
+  8bae0c1e40c27362 10,17,21,28
+  h_1509f411c28ee9 1-9,11-16,18-20,22-27,29-60
+src/assets/index.ts
+  h_1509f411c28ee9 27
+src/features/notes/note-details/note-details-empty-state/note-details-empty-state.module.scss
+  8bae0c1e40c27362 8-18,29-34
+  h_1509f411c28ee9 28
+index.html
+  h_1509f411c28ee9 1,5
+src/components/overlay-loader/overlay-loader.tsx
+  h_1509f411c28ee9 4,10
+vite.config.ts
+  8bae0c1e40c27362 15-26
+favicon.svg
+  h_1509f411c28ee9 1-11
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.3.2",
+  "base_commit_sha": "40223f265b9e6cd7d17e1ce435c5b01dd40d2891",
+  "prompts": {
+    "8bae0c1e40c27362": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "78d4a2ab-7738-4568-9e37-f37fa4d763a2",
+        "model": "composer-2"
+      },
+      "human_author": "Bartłomiej Matoga",
+      "messages": [],
+      "total_additions": 112,
+      "total_deletions": 32,
+      "accepted_lines": 33,
+      "overriden_lines": 1,
+      "messages_url": "https://gitai.miquido.dev/cas/3d6bcb8bcc3977c86c64441f16431681632da7fc27ded5fe741306aaa6c0c701"
+    }
+  },
+  "humans": {
+    "h_1509f411c28ee9": {
+      "author": "Bartłomiej Matoga"
+    }
+  }
+}
