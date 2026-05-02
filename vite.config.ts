@@ -12,6 +12,18 @@ export default defineConfig({
         ref: true,
         svgo: true,
         titleProp: true,
+        svgoConfig: {
+          plugins: [
+            {
+              name: "preset-default",
+              params: {
+                overrides: {
+                  removeStyleElement: false,
+                },
+              },
+            },
+          ],
+        },
       },
       include: "**/*.svg",
     }),
