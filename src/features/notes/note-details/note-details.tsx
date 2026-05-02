@@ -7,14 +7,17 @@ import { AnimatePresence, motion } from "motion/react";
 import { APPEAR_ANIMATION } from "@/consts";
 import { useNoteDetails } from "./note-details.hooks";
 import { Note } from "@/types";
+import { NoteDetailsEmptyState } from "./note-details-empty-state";
 
 export interface NoteDetailsProps {
   onGoBack: () => void;
   isArchived?: Note["isArchived"];
   onDeleteNote: () => void;
+  isNoteSelected: boolean;
 }
 
 export const NoteDetails = ({
+  isNoteSelected,
   isArchived = false,
   onGoBack,
   onDeleteNote,
@@ -22,6 +25,10 @@ export const NoteDetails = ({
   const { note, isLoadingNote, updateNote, isUpdatingNote } = useNoteDetails();
 
   const renderContent = () => {
+    if (!isNoteSelected) {
+      return <NoteDetailsEmptyState />;
+    }
+
     if (isLoadingNote || !note) {
       return (
         <div className={styles.skeleton}>

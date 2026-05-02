@@ -1,0 +1,17 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.content {
+  display: grid;
+  justify-items: center;
+  row-gap: 32px;
+}
+
+.icon {
+  width: 100px;
+  height: 100px;
+}

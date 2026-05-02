@@ -32,6 +32,7 @@ export const ArchivedNotes = () => {
           onGoBack={rootNavigate}
           isArchived
           onDeleteNote={rootNavigate}
+          isNoteSelected={!!activeNoteId}
         />
       }
       isNoteSelected={!!activeNoteId}
