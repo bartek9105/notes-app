@@ -1,0 +1,16 @@
+src/features/notes/note-details/note-details-form/note-details-form.const.ts
+  h_1509f411c28ee9 5
+src/components/modal/modal.tsx
+  h_1509f411c28ee9 55
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.3.2",
+  "base_commit_sha": "68aa8730d0a5004a0ac48998e50d193e34d5eba8",
+  "prompts": {},
+  "humans": {
+    "h_1509f411c28ee9": {
+      "author": "Bartłomiej Matoga"
+    }
+  }
+}
