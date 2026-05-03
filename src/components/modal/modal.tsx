@@ -8,7 +8,7 @@ import { APPEAR_ANIMATION } from "@/consts";
 interface ModalProps {
   isOpen: boolean;
   title: string;
-  hint: string;
+  hint?: string;
   icon: ReactNode;
   buttonsDisabled?: boolean;
   cancelButton: {
@@ -19,7 +19,9 @@ interface ModalProps {
     onClick: () => void;
     text: string;
     variant: ButtonVariant;
+    disabled?: boolean;
   };
+  children?: ReactNode;
 }
 
 export const Modal = ({
@@ -30,6 +32,7 @@ export const Modal = ({
   confirmButton,
   cancelButton,
   buttonsDisabled,
+  children,
 }: ModalProps) => {
   if (!isOpen) return null;
 
@@ -44,9 +47,12 @@ export const Modal = ({
                 <Typography variant="text-3" className={styles.title}>
                   {title}
                 </Typography>
-                <Typography variant="text-5" className={styles.hint}>
-                  {hint}
-                </Typography>
+                {hint && (
+                  <Typography variant="text-5" className={styles.hint}>
+                    {hint}
+                  </Typography>
+                )}
+                {children && <div className={styles.children}>{children}</div>}
               </div>
             </div>
             <div className={styles.footer}>
@@ -62,7 +68,7 @@ export const Modal = ({
                 variant={confirmButton.variant}
                 onClick={confirmButton.onClick}
                 className={styles.button}
-                disabled={buttonsDisabled}
+                disabled={buttonsDisabled || confirmButton.disabled}
               >
                 {confirmButton.text}
               </Button>

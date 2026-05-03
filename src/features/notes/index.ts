@@ -4,3 +4,4 @@ export * from "./notes-layout";
 export * from "./delete-note";
 export * from "./archive-note";
 export * from "./restore-note";
+export * from "./color-tags";

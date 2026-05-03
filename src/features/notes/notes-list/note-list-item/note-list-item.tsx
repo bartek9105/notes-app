@@ -11,13 +11,17 @@ export type NoteListItemProps = {
 };
 
 export const NoteListItem = ({ note, isActive }: NoteListItemProps) => {
-  const { title, created_at, tags } = note;
+  const { title, created_at, tags, color } = note;
 
   return (
     <div
       role="button"
       aria-pressed="false"
-      className={cn(styles.container, { [styles.active]: isActive })}
+      className={cn(styles.container, {
+        [styles.active]: isActive,
+        [styles.border]: color,
+      })}
+      style={{ borderLeftColor: color || "transparent" }}
     >
       <Typography variant="text-3">{title || "Untitled"}</Typography>
       <NoteTagsList tags={tags} />

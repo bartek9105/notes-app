@@ -16,6 +16,7 @@ export type Database = {
     Tables: {
       notes: {
         Row: {
+          color: string | null
           created_at: string
           description: string | null
           id: string
@@ -24,6 +25,7 @@ export type Database = {
           title: string | null
         }
         Insert: {
+          color?: string | null
           created_at?: string
           description?: string | null
           id?: string
@@ -32,6 +34,7 @@ export type Database = {
           title?: string | null
         }
         Update: {
+          color?: string | null
           created_at?: string
           description?: string | null
           id?: string

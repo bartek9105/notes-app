@@ -1,5 +1,6 @@
 import {
   ArchiveNote,
+  ColorTags,
   DeleteNote,
   NoteDetails,
   NotesLayout,
@@ -34,6 +35,7 @@ export const Notes = () => {
         <>
           <DeleteNote onDeleteNote={rootNavigate} />
           <ArchiveNote />
+          <ColorTags />
         </>
       }
     />

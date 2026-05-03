@@ -21,7 +21,7 @@
 
 .title {
   color: var(--neutral-950);
-  margin-bottom: 6px;
+  margin-bottom: 8px;
 }
 
 .hint {
@@ -44,6 +44,10 @@
   display: flex;
   gap: 16px;
   padding: 20px;
+}
+
+.children {
+  margin-top: 16px;
 }
 
 .footer {
