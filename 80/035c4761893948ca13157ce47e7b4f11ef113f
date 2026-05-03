@@ -1,0 +1,55 @@
+src/features/notes/color-tags/color-tags.tsx
+  h_1509f411c28ee9 1-35
+src/components/modal/modal.tsx
+  h_1509f411c28ee9 11,22,24,35,50,54-55,71
+src/assets/index.ts
+  h_1509f411c28ee9 28
+src/features/notes/notes-list/note-list-item/note-list-item.tsx
+  h_1509f411c28ee9 14,21-22,24
+src/features/notes/color-tags/index.ts
+  h_1509f411c28ee9 1
+src/features/notes/color-tags/color-tags-modal/color-tags-modal.tsx
+  h_1509f411c28ee9 1-90
+src/components/modal/modal.module.scss
+  h_1509f411c28ee9 24,49-52
+src/pages/notes/notes.tsx
+  h_1509f411c28ee9 3,38
+src/features/notes/index.ts
+  h_1509f411c28ee9 7
+src/features/notes/color-tags/color-tags.module.scss
+  h_1509f411c28ee9 1-14
+src/assets/check.svg
+  h_1509f411c28ee9 1-3
+src/features/notes/notes-list/note-list-item/note-list-item.module.scss
+  h_1509f411c28ee9 13-16
+src/features/notes/color-tags/color-tags-modal/color-tags-modal.module.scss
+  h_1509f411c28ee9 1-36
+src/features/notes/note-details/note-details-topbar/note-details-topbar.tsx
+  h_1509f411c28ee9 5,29
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.3.2",
+  "base_commit_sha": "80035c4761893948ca13157ce47e7b4f11ef113f",
+  "prompts": {
+    "8bae0c1e40c27362": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "78d4a2ab-7738-4568-9e37-f37fa4d763a2",
+        "model": "composer-2"
+      },
+      "human_author": "Bartłomiej Matoga",
+      "messages": [],
+      "total_additions": 54,
+      "total_deletions": 11,
+      "accepted_lines": 0,
+      "overriden_lines": 0,
+      "messages_url": "https://gitai.miquido.dev/cas/b606d3724a1c830724fed300c93c38616f77b17bff465571374a97307bb6a640"
+    }
+  },
+  "humans": {
+    "h_1509f411c28ee9": {
+      "author": "Bartłomiej Matoga"
+    }
+  }
+}
