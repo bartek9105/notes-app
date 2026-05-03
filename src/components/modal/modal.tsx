@@ -52,7 +52,7 @@ export const Modal = ({
                     {hint}
                   </Typography>
                 )}
-                <div className={styles.children}>{children}</div>
+                {children && <div className={styles.children}>{children}</div>}
               </div>
             </div>
             <div className={styles.footer}>
