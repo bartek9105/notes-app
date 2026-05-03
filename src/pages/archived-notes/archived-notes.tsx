@@ -28,11 +28,7 @@ export const ArchivedNotes = () => {
         />
       }
       NoteDetails={
-        <NoteDetails
-          onGoBack={rootNavigate}
-          isArchived
-          onDeleteNote={rootNavigate}
-        />
+        <NoteDetails onGoBack={rootNavigate} onDeleteNote={rootNavigate} />
       }
       isNoteSelected={!!activeNoteId}
       NoteActions={

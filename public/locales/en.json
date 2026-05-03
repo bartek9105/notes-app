@@ -32,6 +32,9 @@
         "error": "Something went wrong"
       }
     },
+    "pin-note": {
+      "error": "Something went wrong when pinning note"
+    },
     "details-empty-state": "Select a note to view its details",
     "empty-state": "You don’t have any notes yet. Start a new note to capture your thoughts and ideas.",
     "search-empty-state": "No notes match your search. Try a different keyword or create a new note.",

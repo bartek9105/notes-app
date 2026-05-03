@@ -7,7 +7,7 @@ export const OverlayLoader = () => {
   return (
     <div className={styles.overlay}>
       <motion.div {...SCALE_ANIMATION}>
-        <LogoFeatherAnimatedIcon />
+        <LogoFeatherAnimatedIcon className={styles.icon} />
       </motion.div>
     </div>
   );

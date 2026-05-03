@@ -5,30 +5,34 @@ import { DeleteNote } from "../../delete-note";
 import { ArchiveNote, ColorTags, RestoreNote } from "@/features";
 import { Note } from "types/notes";
 import { GoBackButton } from "@/components";
+import { PinNote } from "../../pin-note";
 
-interface NoteDetailsTopbarPfgrops {
+interface NoteDetailsTopbarProps {
   onGoBack: () => void;
   disabled?: boolean;
-  isArchived: Note["isArchived"];
+  note?: Note;
   onDeleteNote: () => void;
 }
 
 export const NoteDetailsTopbar = ({
+  note,
   onGoBack,
   disabled,
-  isArchived,
   onDeleteNote,
-}: NoteDetailsTopbarPfgrops) => {
+}: NoteDetailsTopbarProps) => {
   const { t } = useTranslation();
+
+  if (!note) return null;
 
   return (
     <div className={styles.container}>
       <div className={styles.content}>
         <GoBackButton onGoBack={onGoBack}>{t("notes.go-back")}</GoBackButton>
         <div className={styles.containerRightCol}>
+          <PinNote note={note} className={styles.pin} />
           <ColorTags />
           <DeleteNote onDeleteNote={onDeleteNote} />
-          {isArchived ? <RestoreNote /> : <ArchiveNote />}
+          {note.isArchived ? <RestoreNote /> : <ArchiveNote />}
           <Button variant="secondary" isFlat disabled={disabled}>
             {t("notes.cancel")}
           </Button>

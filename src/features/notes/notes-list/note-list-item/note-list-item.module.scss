@@ -21,3 +21,14 @@
 .date {
   color: var(--neutral-700);
 }
+
+.bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.pin {
+  width: 18px;
+  height: 18px;
+}

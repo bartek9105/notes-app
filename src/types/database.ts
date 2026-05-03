@@ -21,6 +21,7 @@ export type Database = {
           description: string | null
           id: string
           isArchived: boolean
+          isPinned: boolean | null
           tags: string[] | null
           title: string | null
         }
@@ -30,6 +31,7 @@ export type Database = {
           description?: string | null
           id?: string
           isArchived?: boolean
+          isPinned?: boolean | null
           tags?: string[] | null
           title?: string | null
         }
@@ -39,6 +41,7 @@ export type Database = {
           description?: string | null
           id?: string
           isArchived?: boolean
+          isPinned?: boolean | null
           tags?: string[] | null
           title?: string | null
         }

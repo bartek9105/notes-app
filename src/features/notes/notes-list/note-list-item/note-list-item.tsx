@@ -4,6 +4,7 @@ import styles from "./note-list-item.module.scss";
 import { formatDate } from "@/utils";
 import { NoteTagsList } from "./note-tags-list/note-tags-list";
 import cn from "classnames";
+import { PinNote } from "../../pin-note";
 
 export type NoteListItemProps = {
   note: Note;
@@ -25,9 +26,12 @@ export const NoteListItem = ({ note, isActive }: NoteListItemProps) => {
     >
       <Typography variant="text-3">{title || "Untitled"}</Typography>
       <NoteTagsList tags={tags} />
-      <Typography variant="text-6" className={styles.date}>
-        {formatDate(created_at)}
-      </Typography>
+      <div className={styles.bottom}>
+        <Typography variant="text-6" className={styles.date}>
+          {formatDate(created_at)}
+        </Typography>
+        <PinNote note={note} className={styles.pin} />
+      </div>
     </div>
   );
 };

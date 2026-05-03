@@ -21,6 +21,7 @@ export const getAllNotes = async ({
     .select("*", { count: "exact" })
     .eq("isArchived", isArchived)
     .range(from, to)
+    .order("isPinned", { ascending: false, nullsFirst: false })
     .order("created_at", { ascending: false })
     .or(`title.ilike.%${query}%,description.ilike.%${query}%`);
 
@@ -44,7 +45,7 @@ export const getNote = async (id?: Note["id"]) => {
 };
 
 export const createNote = async (
-  payload: CreateNotePayload
+  payload: CreateNotePayload,
 ): Promise<CreateNoteResponse | null> => {
   const { data } = await supabase
     .from("notes")
