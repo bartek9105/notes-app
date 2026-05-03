@@ -25,3 +25,4 @@ export { ReactComponent as SystemIcon } from "./system.svg";
 export { ReactComponent as MoonIcon } from "./moon.svg";
 export { ReactComponent as PulseCircleIcon } from "./pulse-circle.svg";
 export { ReactComponent as LogoFeatherAnimatedIcon } from "./logo-feather-animated.svg";
+export { ReactComponent as CheckIcon } from "./check.svg";

@@ -2,7 +2,7 @@ import { Button, Separator } from "@/components";
 import styles from "./note-details-topbar.module.scss";
 import { useTranslation } from "react-i18next";
 import { DeleteNote } from "../../delete-note";
-import { ArchiveNote, RestoreNote } from "@/features";
+import { ArchiveNote, ColorTags, RestoreNote } from "@/features";
 import { Note } from "types/notes";
 import { GoBackButton } from "@/components";
 
@@ -26,6 +26,7 @@ export const NoteDetailsTopbar = ({
       <div className={styles.content}>
         <GoBackButton onGoBack={onGoBack}>{t("notes.go-back")}</GoBackButton>
         <div className={styles.containerRightCol}>
+          <ColorTags />
           <DeleteNote onDeleteNote={onDeleteNote} />
           {isArchived ? <RestoreNote /> : <ArchiveNote />}
           <Button variant="secondary" isFlat disabled={disabled}>
