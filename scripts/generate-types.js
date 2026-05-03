@@ -11,5 +11,5 @@ if (!projectId) {
 
 execSync(
   `npx supabase gen types typescript --project-id ${projectId} > src/types/database.ts`,
-  { stdio: "inherit" }
+  { stdio: "inherit" },
 );

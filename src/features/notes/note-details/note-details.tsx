@@ -6,20 +6,14 @@ import { NoteDetailsForm } from "./note-details-form/note-details-form";
 import { AnimatePresence, motion } from "motion/react";
 import { APPEAR_ANIMATION } from "@/consts";
 import { useNoteDetails } from "./note-details.hooks";
-import { Note } from "@/types";
 import { NoteDetailsEmptyState } from "./note-details-empty-state";
 
 export interface NoteDetailsProps {
   onGoBack: () => void;
-  isArchived?: Note["isArchived"];
   onDeleteNote: () => void;
 }
 
-export const NoteDetails = ({
-  isArchived = false,
-  onGoBack,
-  onDeleteNote,
-}: NoteDetailsProps) => {
+export const NoteDetails = ({ onGoBack, onDeleteNote }: NoteDetailsProps) => {
   const { note, isLoadingNote, updateNote, isUpdatingNote, noteId } =
     useNoteDetails();
 
@@ -55,9 +49,9 @@ export const NoteDetails = ({
     <div className={styles.container}>
       <div className={styles.topbar}>
         <NoteDetailsTopbar
+          note={note ?? undefined}
           onGoBack={onGoBack}
           disabled={isLoadingNote}
-          isArchived={isArchived}
           onDeleteNote={onDeleteNote}
         />
       </div>
