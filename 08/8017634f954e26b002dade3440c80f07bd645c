@@ -1,0 +1,16 @@
+src/components/navigation/topbar/topbar.tsx
+  h_1509f411c28ee9 60
+src/features/notes/notes-list/notes-list.tsx
+  h_1509f411c28ee9 72-74
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.3.2",
+  "base_commit_sha": "088017634f954e26b002dade3440c80f07bd645c",
+  "prompts": {},
+  "humans": {
+    "h_1509f411c28ee9": {
+      "author": "Bartłomiej Matoga"
+    }
+  }
+}
