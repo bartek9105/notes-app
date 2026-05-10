@@ -1,0 +1,25 @@
+.container {
+  display: grid;
+}
+
+.item {
+  display: grid;
+  row-gap: 6px;
+  padding: 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  &:hover {
+    background-color: var(--neutral-100);
+  }
+}
+
+.active {
+  background-color: var(--neutral-100);
+}
+
+.emptyState {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

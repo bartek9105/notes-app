@@ -1,78 +1,45 @@
-import { ReactNode } from "react";
-import { Typography } from "../typography";
+import { ReactNode, useEffect, useRef } from "react";
 import styles from "./modal.module.scss";
-import { Button, ButtonVariant } from "../button";
 import { AnimatePresence, motion } from "motion/react";
 import { APPEAR_ANIMATION } from "@/consts";
+import { useClickOutside } from "@/hooks";
+import cn from "classnames";
 
 interface ModalProps {
   isOpen: boolean;
-  title: string;
-  hint?: string;
-  icon: ReactNode;
-  buttonsDisabled?: boolean;
-  cancelButton: {
-    onClick: () => void;
-    text: string;
-  };
-  confirmButton: {
-    onClick: () => void;
-    text: string;
-    variant: ButtonVariant;
-    disabled?: boolean;
-  };
+  onClose?: () => void;
   children?: ReactNode;
+  className?: string;
 }
 
-export const Modal = ({
-  isOpen,
-  title,
-  hint,
-  icon,
-  confirmButton,
-  cancelButton,
-  buttonsDisabled,
-  children,
-}: ModalProps) => {
-  if (!isOpen) return null;
+export const Modal = ({ isOpen, onClose, children, className }: ModalProps) => {
+  const contentRef = useRef<HTMLDivElement>(null);
+
+  useClickOutside(contentRef, onClose, isOpen && !!onClose);
+
+  useEffect(() => {
+    if (!isOpen || !onClose) return;
+
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        onClose();
+      }
+    };
+
+    document.addEventListener("keydown", handleKeyDown);
+    return () => document.removeEventListener("keydown", handleKeyDown);
+  }, [isOpen, onClose]);
 
   return (
     <AnimatePresence>
       {isOpen && (
         <motion.div className={styles.overlay} {...APPEAR_ANIMATION}>
-          <motion.div className={styles.container} {...APPEAR_ANIMATION}>
-            <div className={styles.content}>
-              <div className={styles.icon}>{icon}</div>
-              <div>
-                <Typography variant="text-3" className={styles.title}>
-                  {title}
-                </Typography>
-                {hint && (
-                  <Typography variant="text-5" className={styles.hint}>
-                    {hint}
-                  </Typography>
-                )}
-                {children && <div className={styles.children}>{children}</div>}
-              </div>
-            </div>
-            <div className={styles.footer}>
-              <Button
-                variant="secondary"
-                onClick={cancelButton.onClick}
-                className={styles.button}
-                disabled={buttonsDisabled}
-              >
-                {cancelButton.text}
-              </Button>
-              <Button
-                variant={confirmButton.variant}
-                onClick={confirmButton.onClick}
-                className={styles.button}
-                disabled={buttonsDisabled || confirmButton.disabled}
-              >
-                {confirmButton.text}
-              </Button>
-            </div>
+          <motion.div
+            ref={contentRef}
+            className={cn(styles.children, className)}
+            {...APPEAR_ANIMATION}
+          >
+            {children}
           </motion.div>
         </motion.div>
       )}

@@ -3,10 +3,11 @@
     "title": "All notes",
     "archived-notes-title": "Archived notes",
     "settings-title": "Settings",
-    "search": {
-      "placeholder": "Search by title, content, or tags"
-    },
     "logout": "Logout"
+  },
+  "search": {
+    "placeholder": "Search by title, content, or tags",
+    "no-results": "No results found"
   },
   "notes": {
     "title": "All notes",
@@ -37,7 +38,6 @@
     },
     "details-empty-state": "Select a note to view its details",
     "empty-state": "You don’t have any notes yet. Start a new note to capture your thoughts and ideas.",
-    "search-empty-state": "No notes match your search. Try a different keyword or create a new note.",
     "archived-notes-title": "Archived notes",
     "archived-note-list-hint": "All your archived notes are stored here. You can restore or delete them anytime.",
     "archive-note-button": "Archive Note",

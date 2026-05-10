@@ -10,7 +10,7 @@ export * from "./infinite-scroll-container";
 export * from "./textarea-field";
 export * from "./skeleton";
 export * from "./select-field";
-export * from "./modal";
 export * from "./overlay-loader";
 export * from "./logo";
 export * from "./go-back-button";
+export * from "./modal";
