@@ -66,17 +66,13 @@ export const NotesList = ({
     );
   };
 
-  const renderTopBar = () => {
-    return (
-      <Typography variant="text-1" className={styles.title}>
-        {title}
-      </Typography>
-    );
-  };
-
   return (
     <>
-      <div className={styles.topbar}>{renderTopBar()}</div>
+      <div className={styles.topbar}>
+        <Typography variant="text-1" className={styles.title}>
+          {title}
+        </Typography>
+      </div>
       {isArchived ? (
         <Typography variant="text-5" className={styles.archivedNoteHint}>
           {t("notes.archived-note-list-hint")}

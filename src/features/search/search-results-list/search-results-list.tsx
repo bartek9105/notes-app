@@ -6,7 +6,7 @@ import { NoteTagsList } from "../../notes/notes-list";
 import cn from "classnames";
 import { useTranslation } from "react-i18next";
 
-export type SearchResultsListProps = {
+type SearchResultsListProps = {
   listId: string;
   searchResults: Note[];
   showNoResultsMessage: boolean;

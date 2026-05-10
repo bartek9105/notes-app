@@ -57,7 +57,7 @@ export const Topbar = ({ onOpenMenu, isSidebarOpen }: TopbarProps) => {
         </Typography>
       </div>
       <div className={styles.rightSide}>
-        <Search className={styles.search} />
+        <Search />
         <NavLink to={ROUTES.settings.root()}>
           <Button iconOnly icon={<SettingsIcon />} isFlat variant="secondary" />
         </NavLink>
