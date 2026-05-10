@@ -43,14 +43,6 @@
   }
 }
 
-.search {
-  width: 300px;
-  display: none;
-  @include desktop-up {
-    display: inherit;
-  }
-}
-
 .hamburgerIcon {
   cursor: pointer;
   color: var(--neutral-500);

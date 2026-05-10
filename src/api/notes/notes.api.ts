@@ -11,7 +11,6 @@ import {
 export const getAllNotes = async ({
   pageParam = 0,
   isArchived = false,
-  query = "",
 }): Promise<PaginatedResponse<Note[]>> => {
   const from = pageParam * 20;
   const to = from + 20 - 1;
@@ -22,14 +21,22 @@ export const getAllNotes = async ({
     .eq("isArchived", isArchived)
     .range(from, to)
     .order("isPinned", { ascending: false, nullsFirst: false })
-    .order("created_at", { ascending: false })
-    .or(`title.ilike.%${query}%,description.ilike.%${query}%`);
+    .order("created_at", { ascending: false });
 
   return {
     data: data ?? [],
     nextPage: pageParam + 1,
     hasNextPage: to + 1 < (count as number),
   };
+};
+
+export const searchNotes = async (query: string) => {
+  const { data } = await supabase
+    .from("notes")
+    .select("*")
+    .or(`title.ilike.%${query}%,description.ilike.%${query}%`);
+
+  return data;
 };
 
 export const getNote = async (id?: Note["id"]) => {

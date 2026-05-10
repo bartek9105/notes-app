@@ -1,4 +1,4 @@
-import { Modal } from "@/components";
+import { ConfirmationModal } from "@/components";
 import { BinIcon } from "@/assets";
 import { useUpdateNoteMutation } from "@/api";
 import { toast } from "sonner";
@@ -41,7 +41,7 @@ export const ArchiveNoteModal = ({
   };
 
   return (
-    <Modal
+    <ConfirmationModal
       isOpen={isOpen}
       title={t("notes.archive-note-modal.title")}
       hint={t("notes.archive-note-modal.hint")}

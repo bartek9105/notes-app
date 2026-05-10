@@ -1,2 +1,1 @@
-export * from "./note-list-item";
 export * from "./note-tags-list";

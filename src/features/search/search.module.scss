@@ -1,3 +1,18 @@
-.goBackButton {
+.modal {
+  width: 600px;
+  max-height: 50vh;
+  overflow-y: auto;
+  padding: 16px;
+  display: grid;
+  row-gap: 16px;
+}
+
+.icon {
   cursor: pointer;
+}
+
+.searchInputContainer {
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }

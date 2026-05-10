@@ -1,4 +1,4 @@
-import { Modal } from "@/components";
+import { ConfirmationModal } from "@/components";
 import { BinIcon } from "@/assets";
 import { useDeleteNoteMutation } from "@/api";
 import { toast } from "sonner";
@@ -36,7 +36,7 @@ export const DeleteNoteModal = ({
   };
 
   return (
-    <Modal
+    <ConfirmationModal
       isOpen={isOpen}
       title={t("notes.delete-note-modal.title")}
       hint={t("notes.delete-note-modal.hint")}

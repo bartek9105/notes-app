@@ -9,6 +9,7 @@ import {
   deleteNote,
   getAllNotes,
   getNote,
+  searchNotes,
   updateNote,
 } from "./notes.api";
 import { NOTES_QUERY_KEYS } from "./notes.const";
@@ -17,12 +18,11 @@ import { mapGetAllNotesResponse } from "./notes.utils";
 
 export const useGetAllNotesInfiniteQuery = (
   isArchived: Note["isArchived"] = false,
-  query: string = ""
 ) => {
   const { data, ...rest } = useInfiniteQuery({
     initialPageParam: 0,
-    queryKey: [NOTES_QUERY_KEYS.getAllNotes, isArchived, query],
-    queryFn: ({ pageParam }) => getAllNotes({ pageParam, isArchived, query }),
+    queryKey: [NOTES_QUERY_KEYS.getAllNotes, isArchived],
+    queryFn: ({ pageParam }) => getAllNotes({ pageParam, isArchived }),
     getNextPageParam: (lastPage) => {
       return lastPage.hasNextPage ? lastPage.nextPage : undefined;
     },
@@ -32,6 +32,14 @@ export const useGetAllNotesInfiniteQuery = (
     data: mapGetAllNotesResponse(data),
     ...rest,
   };
+};
+
+export const useSearchNotesQuery = (query: string) => {
+  return useQuery({
+    queryKey: [NOTES_QUERY_KEYS.searchNotes, query],
+    queryFn: () => searchNotes(query),
+    enabled: !!query,
+  });
 };
 
 export const useGetNoteQuery = (id?: Note["id"]) => {

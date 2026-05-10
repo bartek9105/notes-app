@@ -1,4 +1,4 @@
-import { Modal } from "@/components";
+import { ConfirmationModal } from "@/components";
 import styles from "./color-tags-modal.module.scss";
 import { CheckIcon, TagIcon } from "@/assets";
 import { useNoteDetails } from "../../note-details/note-details.hooks";
@@ -54,7 +54,7 @@ export const ColorTagsModal = ({ isOpen, toggle }: ColorTagsModalProps) => {
   };
 
   return (
-    <Modal
+    <ConfirmationModal
       isOpen={isOpen}
       title="Label color"
       icon={<TagIcon />}
@@ -85,6 +85,6 @@ export const ColorTagsModal = ({ isOpen, toggle }: ColorTagsModalProps) => {
           </li>
         ))}
       </ul>
-    </Modal>
+    </ConfirmationModal>
   );
 };
