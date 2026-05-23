@@ -3,7 +3,7 @@ import styles from "./change-password.module.scss";
 import {
   BaseForm,
   Button,
-  Field,
+  InputField,
   Spinner,
   Typography,
   useBaseForm,
@@ -58,12 +58,12 @@ export const ChangePassword = () => {
 
     return (
       <BaseForm params={formParams} onSubmit={onSubmit} className={styles.form}>
-        <Field
+        <InputField
           name="password"
           label={t("settings.change-password.form.password.label")}
           type="password"
         />
-        <Field
+        <InputField
           name="confirmPassword"
           label={t("settings.change-password.form.confirm-password.label")}
           type="password"

@@ -2,7 +2,7 @@ import { InputHTMLAttributes } from "react";
 import styles from "./input.module.scss";
 import cn from "classnames";
 
-type InputProps = InputHTMLAttributes<HTMLInputElement> & {
+export type InputProps = InputHTMLAttributes<HTMLInputElement> & {
   isError?: boolean;
 };
 

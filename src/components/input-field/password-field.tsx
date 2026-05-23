@@ -1,17 +1,25 @@
 import { InputHTMLAttributes } from "react";
 import { useController } from "react-hook-form";
-import styles from "./field.module.scss";
+import styles from "./input-field.module.scss";
 import { Typography } from "../typography";
-import { Input } from "../input";
+import { InputPassword } from "../input";
 import { InfoIcon } from "@/assets";
 
-type FieldProps = InputHTMLAttributes<HTMLInputElement> & {
+type PasswordFieldProps = Omit<
+  InputHTMLAttributes<HTMLInputElement>,
+  "type"
+> & {
   name: string;
   label: string;
   hint?: string;
 };
 
-export const Field = ({ label, name, hint, ...restProps }: FieldProps) => {
+export const PasswordField = ({
+  label,
+  name,
+  hint,
+  ...restProps
+}: PasswordFieldProps) => {
   const {
     field,
     fieldState: { error },
@@ -22,7 +30,7 @@ export const Field = ({ label, name, hint, ...restProps }: FieldProps) => {
       <label htmlFor={name}>
         <Typography variant="text-4">{label}</Typography>
       </label>
-      <Input {...field} {...restProps} isError={!!error?.message} />
+      <InputPassword {...field} {...restProps} isError={!!error?.message} />
       {hint && (
         <div className={styles.hint}>
           <InfoIcon />

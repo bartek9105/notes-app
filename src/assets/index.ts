@@ -14,6 +14,7 @@ export { ReactComponent as SearchIcon } from "./search.svg";
 export { ReactComponent as SettingsIcon } from "./settings.svg";
 export { ReactComponent as TagIcon } from "./tag.svg";
 export { ReactComponent as EyeIcon } from "./eye.svg";
+export { ReactComponent as EyeHideIcon } from "./eye-hide.svg";
 export { ReactComponent as GoogleIcon } from "./google.svg";
 export { ReactComponent as InfoIcon } from "./info.svg";
 export { ReactComponent as RestoreIcon } from "./restore.svg";

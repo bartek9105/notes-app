@@ -1,4 +1,10 @@
-import { BaseForm, Button, Field, useBaseForm } from "@/components";
+import {
+  BaseForm,
+  Button,
+  InputField,
+  PasswordField,
+  useBaseForm,
+} from "@/components";
 import { AUTH_FORM_DEFAULT_VALUES } from "./auth-form.const";
 import { authFormValidationSchema } from "./auth-form.validations";
 import { AuthFormDataType } from "./auth-form.types";
@@ -29,15 +35,14 @@ export const AuthForm = ({
       onSubmit={onSubmit}
       className={styles.container}
     >
-      <Field
+      <InputField
         name="email"
         label={t("auth.form.email.label")}
         placeholder="email@example.com"
       />
-      <Field
+      <PasswordField
         name="password"
         label={t("auth.form.password.label")}
-        type="password"
         hint={t("auth.form.password.hint")}
       />
       <Button type="submit" isLoading={isPending}>

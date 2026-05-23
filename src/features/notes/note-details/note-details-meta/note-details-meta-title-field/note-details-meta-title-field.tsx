@@ -1,9 +1,9 @@
-import { Field } from "@/components";
+import { InputField } from "@/components";
 import styles from "./note-details-meta-title-field.module.scss";
 
 export const NoteDetailsMetaTitleField = () => {
   return (
-    <Field
+    <InputField
       name="title"
       label=""
       className={styles.field}
