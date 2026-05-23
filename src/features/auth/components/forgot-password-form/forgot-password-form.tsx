@@ -1,4 +1,4 @@
-import { BaseForm, Button, Field, useBaseForm } from "@/components";
+import { BaseForm, Button, InputField, useBaseForm } from "@/components";
 import { AuthFormLayout } from "../auth-form-layout/auth-form-layout";
 import { FORGOT_PASSWORD_FORM_DEFAULT_VALUES } from "./forgot-password-form.const";
 import { forgotPasswordFormValidationSchema } from "./forgot-password-form.validations";
@@ -32,7 +32,7 @@ export const ForgotPasswordForm = () => {
         onSubmit={onSubmit}
         className={styles.container}
       >
-        <Field
+        <InputField
           name="email"
           label={t("auth.forgot-password.form.email.label")}
           placeholder="email@example.com"
