@@ -6,12 +6,21 @@ import {
   UpdateNotePayload,
   CreateNoteResponse,
   UpdateNoteResponse,
+  NotesSortOrder,
 } from "@/types";
+import { DEFAULT_NOTES_SORT_ORDER } from "./notes.const";
+
+interface GetAllNotesParams {
+  pageParam?: number;
+  isArchived?: boolean;
+  sortOrder?: NotesSortOrder;
+}
 
 export const getAllNotes = async ({
   pageParam = 0,
   isArchived = false,
-}): Promise<PaginatedResponse<Note[]>> => {
+  sortOrder = DEFAULT_NOTES_SORT_ORDER,
+}: GetAllNotesParams): Promise<PaginatedResponse<Note[]>> => {
   const from = pageParam * 20;
   const to = from + 20 - 1;
 
@@ -21,7 +30,7 @@ export const getAllNotes = async ({
     .eq("isArchived", isArchived)
     .range(from, to)
     .order("isPinned", { ascending: false, nullsFirst: false })
-    .order("created_at", { ascending: false });
+    .order("created_at", { ascending: sortOrder === "oldest" });
 
   return {
     data: data ?? [],

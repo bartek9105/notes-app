@@ -15,3 +15,4 @@ export * from "./logo";
 export * from "./go-back-button";
 export * from "./modal";
 export * from "./input-field";
+export * from "./dropdown";
