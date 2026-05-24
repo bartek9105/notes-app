@@ -42,7 +42,7 @@ export const Topbar = ({ onOpenMenu, isSidebarOpen }: TopbarProps) => {
     <div className={styles.container}>
       <div className={styles.leftSide}>
         {!isSidebarOpen && (
-          <div className={styles.mobileOnly}>
+          <div className={styles.leftSideMobile}>
             <HamburgerIcon
               onClick={onOpenMenu}
               className={styles.hamburgerIcon}
