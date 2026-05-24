@@ -19,6 +19,7 @@
       "@/hooks": ["./hooks"],
       "@/styles": ["./styles"],
       "@/assets": ["./assets"],
+      "@/animations": ["./animations"],
       "@/pages": ["./pages"],
       "@/guards": ["./guards"],
       "@/config": ["./config"]
@@ -27,6 +28,7 @@
     /* Bundler mode */
     "moduleResolution": "bundler",
     "allowImportingTsExtensions": true,
+    "resolveJsonModule": true,
     "isolatedModules": true,
     "moduleDetection": "force",
     "noEmit": true,

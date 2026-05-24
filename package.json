@@ -19,6 +19,7 @@
     "i18next": "^25.2.1",
     "i18next-browser-languagedetector": "^8.2.0",
     "i18next-http-backend": "^3.0.2",
+    "lottie-react": "^2.4.1",
     "motion": "^12.11.3",
     "normalize.css": "^8.0.1",
     "path": "^0.12.7",
