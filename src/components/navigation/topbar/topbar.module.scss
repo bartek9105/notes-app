@@ -30,6 +30,16 @@
   gap: 16px;
 }
 
+.leftSideMobile {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  @include desktop-up {
+    display: none;
+  }
+}
+
 .rightSide {
   display: flex;
   align-items: center;

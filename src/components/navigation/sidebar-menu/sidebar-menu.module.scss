@@ -22,10 +22,19 @@
   }
 }
 
+.linkCollapsed {
+  justify-content: center;
+  padding: 10px;
+}
+
 .linkLeftContent {
   display: flex;
   column-gap: 8px;
   align-items: center;
+}
+
+.label {
+  white-space: nowrap;
 }
 
 .linkActive {

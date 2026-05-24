@@ -13,10 +13,10 @@ interface SidebarMenuProps {
     icon: React.ElementType;
     label: string;
   }[];
-  onClose?: () => void;
+  isCollapsed?: boolean;
 }
 
-export const SidebarMenu = ({ items, onClose }: SidebarMenuProps) => {
+export const SidebarMenu = ({ items, isCollapsed }: SidebarMenuProps) => {
   return (
     <motion.ul
       className={styles.list}
@@ -31,20 +31,23 @@ export const SidebarMenu = ({ items, onClose }: SidebarMenuProps) => {
           initial="hidden"
           animate="visible"
         >
-          <NavLink to={item.route} onClick={onClose}>
+          <NavLink to={item.route} title={isCollapsed ? item.label : undefined}>
             {({ isActive }) => (
               <div
                 className={cn(styles.link, {
                   [styles.linkActive]: isActive,
+                  [styles.linkCollapsed]: isCollapsed,
                 })}
               >
                 <div className={styles.linkLeftContent}>
                   <item.icon className={styles.icon} />
-                  <Typography variant="text-4" className={styles.label}>
-                    {item.label}
-                  </Typography>
+                  {!isCollapsed && (
+                    <Typography variant="text-4" className={styles.label}>
+                      {item.label}
+                    </Typography>
+                  )}
                 </div>
-                {isActive && <ChevronRightIcon />}
+                {!isCollapsed && isActive && <ChevronRightIcon />}
               </div>
             )}
           </NavLink>

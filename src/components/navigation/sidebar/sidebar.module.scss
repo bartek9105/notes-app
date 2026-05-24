@@ -13,10 +13,26 @@
   border-right: 1px solid var(--neutral-200);
   z-index: 1000;
   padding: 24px 16px 12px;
+  overflow: hidden;
+  transition:
+    transform 0.225s ease,
+    width 0.225s ease,
+    padding 0.225s ease;
 
   @include desktop-up {
     position: unset;
     height: 100%;
+    transform: none;
+  }
+}
+
+.collapsed {
+  transform: translateX(-100%);
+
+  @include desktop-up {
+    transform: none;
+    width: 72px;
+    padding: 24px 8px 12px;
   }
 }
 
@@ -26,7 +42,11 @@
   align-items: center;
 }
 
-.closeIcon {
+.topbarCollapsed {
+  justify-content: center;
+}
+
+.toggleIcon {
   cursor: pointer;
   color: var(--neutral-700);
 }
