@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Outlet } from "react-router-dom";
 import styles from "./main-layout.module.scss";
 import cn from "classnames";
+import { Welcome } from "@/features";
 
 export const MainLayout = () => {
   const [isSidebarOpen, setSidebarOpen] = useState(false);
@@ -26,6 +27,7 @@ export const MainLayout = () => {
           <Outlet />
         </div>
       </div>
+      <Welcome />
     </div>
   );
 };

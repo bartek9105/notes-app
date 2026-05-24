@@ -148,5 +148,10 @@
         "error": "Something went wrong"
       }
     }
+  },
+  "welcome": {
+    "title": "Welcome!",
+    "hint": "Thanks for joining Notes! Hope you enjoy your time here.",
+    "button": "Get started"
   }
 }
