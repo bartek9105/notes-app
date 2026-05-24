@@ -42,7 +42,7 @@ export const Topbar = ({ onOpenMenu, isSidebarOpen }: TopbarProps) => {
     <div className={styles.container}>
       <div className={styles.leftSide}>
         {!isSidebarOpen && (
-          <>
+          <div className={styles.mobileOnly}>
             <HamburgerIcon
               onClick={onOpenMenu}
               className={styles.hamburgerIcon}
@@ -50,7 +50,7 @@ export const Topbar = ({ onOpenMenu, isSidebarOpen }: TopbarProps) => {
             <NavLink to={ROUTES.notes.allNotes.root()}>
               <AppLogo />
             </NavLink>
-          </>
+          </div>
         )}
         <Typography variant="text-1" className={styles.title}>
           {t(getTopbarTitle(pathname))}

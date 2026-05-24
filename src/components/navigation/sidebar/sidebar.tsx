@@ -1,35 +1,33 @@
 import styles from "./sidebar.module.scss";
 import { NAVIGATION_ITEMS } from "./sidebar.const";
 import { AppLogo, Separator } from "@/components";
-import { AnimatePresence, motion } from "motion/react";
-import { CloseIcon } from "@/assets";
-import { SLIDE_FROM_LEFT_ANIMATION } from "@/consts";
+import { CloseIcon, HamburgerIcon } from "@/assets";
 import { SidebarMenu } from "../sidebar-menu/sidebar-menu";
+import cn from "classnames";
 
 interface SidebarProps {
   isOpen: boolean;
-  onClose: () => void;
+  onToggle: () => void;
 }
 
-export const Sidebar = ({ isOpen, onClose }: SidebarProps) => {
-  if (!isOpen) return null;
-
+export const Sidebar = ({ isOpen, onToggle }: SidebarProps) => {
   return (
-    <AnimatePresence>
-      {isOpen && (
-        <motion.div
-          key="sidebar"
-          className={styles.container}
-          {...SLIDE_FROM_LEFT_ANIMATION}
-        >
-          <div className={styles.topbar}>
+    <aside
+      className={cn(styles.container, { [styles.collapsed]: !isOpen })}
+      aria-expanded={isOpen}
+    >
+      <div className={cn(styles.topbar, { [styles.topbarCollapsed]: !isOpen })}>
+        {isOpen ? (
+          <>
             <AppLogo />
-            <CloseIcon onClick={onClose} className={styles.closeIcon} />
-          </div>
-          <SidebarMenu items={NAVIGATION_ITEMS} onClose={onClose} />
-          <Separator />
-        </motion.div>
-      )}
-    </AnimatePresence>
+            <CloseIcon onClick={onToggle} className={styles.toggleIcon} />
+          </>
+        ) : (
+          <HamburgerIcon onClick={onToggle} className={styles.toggleIcon} />
+        )}
+      </div>
+      <SidebarMenu items={NAVIGATION_ITEMS} isCollapsed={!isOpen} />
+      <Separator />
+    </aside>
   );
 };
