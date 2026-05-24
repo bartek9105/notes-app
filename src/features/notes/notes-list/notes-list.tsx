@@ -89,16 +89,16 @@ export const NotesList = ({
       )}
       <div className={styles.stickyHeader}>
         {!isArchived && (
-          <div className={styles.glass}>
-            <Button
-              className={styles.addNoteDesktopButton}
-              leftIcon={<PlusIcon />}
-              onClick={createNote}
-              isLoading={isCreatingNewNote}
-            >
-              {buttonText}
-            </Button>
-          </div>
+          // <div className={styles.glass}>
+          <Button
+            className={styles.addNoteDesktopButton}
+            leftIcon={<PlusIcon />}
+            onClick={createNote}
+            isLoading={isCreatingNewNote}
+          >
+            {buttonText}
+          </Button>
+          // </div>
         )}
         <div className={styles.sortBar}>
           <Dropdown<NotesSortOrder>

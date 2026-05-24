@@ -43,17 +43,7 @@
   display: none;
   @include desktop-up {
     display: flex;
-    position: sticky;
-    top: 0;
-    left: 0;
-  }
-}
-
-.glass {
-  display: none;
-  @include desktop-up {
-    display: flex;
-    padding: 20px 0 16px;
+    margin-bottom: 8px;
   }
 }
 
@@ -76,6 +66,9 @@
   z-index: 1;
   background-color: var(--bg-glass);
   backdrop-filter: blur(8px);
+  @include desktop-up {
+    padding: 20px 0 16px;
+  }
 }
 
 .sortBar {
