@@ -1,6 +1,11 @@
 import styles from "./notes-list.module.scss";
 import { NoteListItem } from "./note-list-item";
-import { Button, InfiniteScrollContainer, Typography } from "@/components";
+import {
+  Button,
+  Dropdown,
+  InfiniteScrollContainer,
+  Typography,
+} from "@/components";
 import { motion } from "motion/react";
 import { PlusIcon } from "@/assets";
 
@@ -9,6 +14,8 @@ import { useNotesList } from "./notes-list.hooks";
 import { NotesListEmptyState } from "./notes-list-empty-state";
 import { LIST_ANIMATION, LIST_ITEM_ANIMATION } from "@/consts";
 import { useTranslation } from "react-i18next";
+import { NotesSortOrder } from "@/types";
+import { NOTES_SORT_OPTIONS } from "./notes-list.const";
 
 export const NotesList = ({
   title,
@@ -27,6 +34,8 @@ export const NotesList = ({
     fetchNextPage,
     hasNextPage,
     activeNoteId,
+    sortOrder,
+    setSortOrder,
   } = useNotesList({ isArchived });
 
   const isEmpty = notes.length === 0 && !isLoading;
@@ -73,12 +82,13 @@ export const NotesList = ({
           {title}
         </Typography>
       </div>
-      {isArchived ? (
+      {isArchived && (
         <Typography variant="text-5" className={styles.archivedNoteHint}>
           {t("notes.archived-note-list-hint")}
         </Typography>
-      ) : (
-        <div className={styles.glass}>
+      )}
+      <div className={styles.stickyHeader}>
+        {!isArchived && (
           <Button
             className={styles.addNoteDesktopButton}
             leftIcon={<PlusIcon />}
@@ -87,8 +97,21 @@ export const NotesList = ({
           >
             {buttonText}
           </Button>
+        )}
+        <div className={styles.sortBar}>
+          <Dropdown<NotesSortOrder>
+            options={NOTES_SORT_OPTIONS.map((option) => ({
+              ...option,
+              label: t(option.labelTranslationKey),
+            }))}
+            value={sortOrder}
+            onChange={setSortOrder}
+            label={
+              <span className={styles.sortLabel}>{t("notes.sort.label")}</span>
+            }
+          />
         </div>
-      )}
+      </div>
       {renderNotesList()}
       {!isArchived && (
         <Button

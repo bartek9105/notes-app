@@ -59,6 +59,13 @@
         "success": "Note restored",
         "error": "Something went wrong"
       }
+    },
+    "sort": {
+      "label": "Sort by:",
+      "options": {
+        "newest": "Newest to oldest",
+        "oldest": "Oldest to newest"
+      }
     }
   },
   "auth": {

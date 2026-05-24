@@ -12,17 +12,19 @@ import {
   searchNotes,
   updateNote,
 } from "./notes.api";
-import { NOTES_QUERY_KEYS } from "./notes.const";
-import { Note } from "@/types";
+import { DEFAULT_NOTES_SORT_ORDER, NOTES_QUERY_KEYS } from "./notes.const";
+import { Note, NotesSortOrder } from "@/types";
 import { mapGetAllNotesResponse } from "./notes.utils";
 
 export const useGetAllNotesInfiniteQuery = (
   isArchived: Note["isArchived"] = false,
+  sortOrder: NotesSortOrder = DEFAULT_NOTES_SORT_ORDER,
 ) => {
   const { data, ...rest } = useInfiniteQuery({
     initialPageParam: 0,
-    queryKey: [NOTES_QUERY_KEYS.getAllNotes, isArchived],
-    queryFn: ({ pageParam }) => getAllNotes({ pageParam, isArchived }),
+    queryKey: [NOTES_QUERY_KEYS.getAllNotes, isArchived, sortOrder],
+    queryFn: ({ pageParam }) =>
+      getAllNotes({ pageParam, isArchived, sortOrder }),
     getNextPageParam: (lastPage) => {
       return lastPage.hasNextPage ? lastPage.nextPage : undefined;
     },

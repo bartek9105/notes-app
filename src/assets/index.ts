@@ -2,6 +2,7 @@ export { ReactComponent as ArchiveIcon } from "./archive.svg";
 export { ReactComponent as BinIcon } from "./bin.svg";
 export { ReactComponent as ChevronLeftIcon } from "./chevron-left.svg";
 export { ReactComponent as ChevronRightIcon } from "./chevron-right.svg";
+export { ReactComponent as ChevronDownIcon } from "./chevron-down.svg";
 export { ReactComponent as ClockIcon } from "./clock.svg";
 export { ReactComponent as CloseIcon } from "./close.svg";
 export { ReactComponent as HamburgerIcon } from "./hamburger.svg";
