@@ -1,0 +1,65 @@
+src/features/notes/notes-list/notes-list.module.scss
+  h_1509f411c28ee9 83
+  28d2534eab15f3db 72-82,84-92
+src/features/notes/notes-list/notes-list.const.ts
+  h_1509f411c28ee9 1-10
+src/assets/index.ts
+  28d2534eab15f3db 5
+src/features/notes/notes-list/notes-list.hooks.ts
+  28d2534eab15f3db 1-8,10-11,22-46,53,78-79
+src/api/notes/notes.queries.ts
+  28d2534eab15f3db 15-16,21,25-27
+src/types/notes.ts
+  28d2534eab15f3db 12-13
+src/api/notes/index.ts
+  28d2534eab15f3db 2
+src/features/notes/notes-list/notes-list.tsx
+  28d2534eab15f3db 3-8,17,37-38,85,90-116
+  h_1509f411c28ee9 18
+public/locales/en.json
+  28d2534eab15f3db 62-68
+src/components/dropdown/dropdown.module.scss
+  h_1509f411c28ee9 85
+  28d2534eab15f3db 1-84,86-110
+src/assets/chevron-down.svg
+  28d2534eab15f3db 1-3
+src/components/index.ts
+  28d2534eab15f3db 18
+src/api/notes/notes.const.ts
+  28d2534eab15f3db 1-2,8-17
+src/components/dropdown/dropdown.tsx
+  28d2534eab15f3db 1-4,6-67,69-88
+  h_1509f411c28ee9 5,68
+src/api/notes/notes.api.ts
+  28d2534eab15f3db 9,11-17,22-23,33
+src/components/dropdown/dropdown.types.ts
+  28d2534eab15f3db 1-18
+src/components/dropdown/index.ts
+  28d2534eab15f3db 1-2
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.3.2",
+  "base_commit_sha": "2c5349b53a49d0a801f2a0a29a5b97cad30dcbad",
+  "prompts": {
+    "28d2534eab15f3db": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "76be528c-ccab-4a6d-b740-715de95e1535",
+        "model": "claude-opus-4-7"
+      },
+      "human_author": "Bartłomiej Matoga",
+      "messages": [],
+      "total_additions": 394,
+      "total_deletions": 51,
+      "accepted_lines": 354,
+      "overriden_lines": 2,
+      "messages_url": "https://gitai.miquido.dev/cas/269f25b3cfd2073463d5dbb350ce58ccf0fdbf3782cc725d6222ae9ec1e0f0c2"
+    }
+  },
+  "humans": {
+    "h_1509f411c28ee9": {
+      "author": "Bartłomiej Matoga"
+    }
+  }
+}
